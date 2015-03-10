@@ -52,6 +52,13 @@ module.exports = function (grunt) {
         files: ['<%= config.app %>/styles/{,*/}*.css'],
         tasks: ['newer:copy:styles', 'autoprefixer']
       },
+      less : {
+        files : ["<%= config.app %>/styles/less/app.less"],
+        tasks : ['less:development'],
+        options: {
+          livereload: true
+        }
+      },
       livereload: {
         options: {
           livereload: '<%= connect.options.livereload %>'
