@@ -325,8 +325,29 @@ module.exports = function (grunt) {
         'imagemin',
         'svgmin'
       ]
+    },
+
+    less: {
+      development: {
+        files: {
+          "<%= config.app %>/styles/app.css": "<%= config.app %>/styles/less/app.less"
+        }
+      },
+      production: {
+        options: {
+          paths: ["styles/less"],
+          plugins: [
+            new (require('less-plugin-autoprefix'))({browsers: ["last 2 versions"]})
+          ]
+        },
+        files: {
+          "<%= config.app %>/styles/app.css": "<%= config.app %>/styles/less/app.less"
+        }
+      }
     }
   });
+
+  grunt.loadNpmTasks('grunt-contrib-less');
 
 
   grunt.registerTask('serve', 'start the server and preview your app, --allow-remote for remote access', function (target) {
@@ -339,6 +360,7 @@ module.exports = function (grunt) {
 
     grunt.task.run([
       'clean:server',
+      'less:development',
       'wiredep',
       'concurrent:server',
       'autoprefixer',
@@ -369,6 +391,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'clean:dist',
+    'less:production',
     'wiredep',
     'useminPrepare',
     'concurrent:dist',
