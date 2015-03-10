@@ -1,6 +1,48 @@
-#main {
-  width: 150px;
+body {
+  background-color: #FFFFFF;
 }
-#test {
-  width: 666px;
+header {
+  background-color: #000000;
+}
+header nav {
+  padding-bottom: 0;
+}
+header nav ul {
+  list-style: none;
+  padding: 17px;
+}
+header nav ul li {
+  display: inline;
+  padding-right: 60px;
+  font-size: 1.8em;
+}
+header nav ul li a {
+  text-decoration: none;
+}
+header nav ul li a:hover {
+  text-decoration: none;
+}
+main {
+  width: 90%;
+  margin: 0 auto;
+}
+.ecma6-view .ecma6-content {
+  width: 83%;
+  display: inline;
+  float: left;
+  margin-left: 2%;
+}
+.ecma6-view .ecma6-sidebar {
+  width: 15%;
+  display: inline;
+  float: left;
+}
+.ecma6-view .ecma6-sidebar ul {
+  list-style: none;
+}
+.ecma6-view .ecma6-sidebar ul li a {
+  font-size: 1.4em;
+}
+.ecma6-view .ecma6-sidebar ul li a:hover {
+  text-decoration: none;
 }

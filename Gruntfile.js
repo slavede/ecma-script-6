@@ -53,7 +53,7 @@ module.exports = function (grunt) {
         tasks: ['newer:copy:styles', 'autoprefixer']
       },
       less : {
-        files : ["<%= config.app %>/styles/less/app.less"],
+        files : ["<%= config.app %>/styles/less/*.less", "<%= config.app %>/styles/less/**/*.less"],
         tasks : ['less:development'],
         options: {
           livereload: true
