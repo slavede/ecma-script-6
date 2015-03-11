@@ -12,7 +12,13 @@ angular
 			})
 			.state('ecma6.templatestrings', {
 				url : 'ecma6/templatestrings',
-				templateUrl : 'partials/ecma6/templatestrings.html'
+				templateUrl : 'partials/ecma6/templatestrings.html',
+				controller : 'templatestrings'
+			})
+			.state('ecma6.templatestrings-babel', {
+				url : 'ecma6/templatestrings',
+				templateUrl : 'partials/ecma6/templatestrings-babel.html',
+				controller : 'templatestrings-babel'
 			})
 			.state('home', {
 				url : '/home',

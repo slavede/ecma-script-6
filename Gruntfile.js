@@ -22,6 +22,8 @@ module.exports = function (grunt) {
     dist: 'dist'
   };
 
+  
+
   // Define the configuration for all the tasks
   grunt.initConfig({
 
@@ -68,6 +70,17 @@ module.exports = function (grunt) {
           '.tmp/styles/{,*/}*.css',
           '<%= config.app %>/images/{,*/}*'
         ]
+      }
+    },
+
+    babel : {
+      options: {
+          sourceMap: true
+        },
+      dist : {
+        files : {
+          'app/scripts/controllers/templatestrings-babel.js' : 'app/scripts/controllers/templatestrings.js'  
+        }
       }
     },
 
@@ -124,6 +137,16 @@ module.exports = function (grunt) {
             '!<%= config.dist %>/.git*'
           ]
         }]
+      },
+      babel : {
+        files : [
+          {
+            dot : true,
+            src : [
+              '<%= config.app %>/scripts/**/*-babel*'
+            ]
+          }
+        ]
       },
       server: '.tmp'
     },
@@ -355,7 +378,32 @@ module.exports = function (grunt) {
   });
 
   grunt.loadNpmTasks('grunt-contrib-less');
+  grunt.loadNpmTasks('grunt-babel');
 
+  grunt.registerTask('babel-build', function() {
+    grunt.task.run(['clean:babel', 'babel:dist', 'babel-converter']);
+  });
+
+  var glob = require('glob'), fs = require('fs');
+  // task for taking automatically created .js files and appending -babel to each angular declaration (mostly controllers)
+  grunt.registerTask('babel-converter', function() {
+    var files = glob.sync('app/scripts/**/*-babel.*'),
+      filesLength = files.length;
+
+    for (var i = 0; i < filesLength; i++) {
+      // console.log("Reading ", files[i]);
+      var readData = fs.readFileSync(files[i], {encoding:'utf-8'});
+      // console.log(readData);
+      if (files[i].indexOf('.map') > -1) {
+        console.log('Converting map file');
+        var result = readData.replace(/angular\.module\('EcmaScript6'\)\.(.*?)\('(.*?)',/g, "angular\.module\('EcmaScript6'\)\.$1\('$2-babel',");
+        fs.writeFileSync(files[i], result, {encoding:'utf-8'});
+      } else {
+        var result = readData.replace(/angular\.module\("EcmaScript6"\)\.(.*?)\("(.*?)",/g, 'angular\.module\("EcmaScript6"\)\.$1\("$2-babel",');
+        fs.writeFileSync(files[i], result, {encoding:'utf-8'});
+      }
+    }
+  });
 
   grunt.registerTask('serve', 'start the server and preview your app, --allow-remote for remote access', function (target) {
     if (grunt.option('allow-remote')) {
