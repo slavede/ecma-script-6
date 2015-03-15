@@ -35,6 +35,10 @@
       <main ui-view>
       </main>
 
+      <div class="log-output">
+        <pre ng-repeat="info in appLogger.logs.info.slice().reverse() track by $index">{{info}}</pre>
+      </div>
+
       <footer>
         
       </footer>
@@ -78,6 +82,8 @@
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/templatestrings.js"></script>
         <script src="scripts/controllers/templatestrings-babel.js"></script>
+
+        <script src="scripts/factories/app-logger.js"></script>
         <!-- endbuild -->
 </body>
 </html>
