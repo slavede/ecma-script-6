@@ -12,4 +12,7 @@ angular.module('EcmaScript6').controller('templatestrings', ['$scope', 'AppLogge
 
 	AppLogger.info(multilineString);
 
+	var a = 1;
+	AppLogger.info(`I can also calculate in string now : ${5 + a}`);
+
 }]);

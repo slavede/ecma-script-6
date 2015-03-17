@@ -36,7 +36,7 @@
       </main>
 
       <div class="log-output">
-        <pre ng-repeat="info in appLogger.logs.info.slice().reverse() track by $index">{{info}}</pre>
+        <pre ng-repeat="info in appLogger.logs.info.slice(-5) track by $index">{{info}}</pre>
       </div>
 
       <footer>
