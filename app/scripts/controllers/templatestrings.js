@@ -15,4 +15,10 @@ angular.module('EcmaScript6').controller('templatestrings', ['$scope', 'AppLogge
 	var a = 1;
 	AppLogger.info(`I can also calculate in string now : ${5 + a}`);
 
+	function myTagger(strings, value1, value2) {
+		return 'raw: ' + strings.raw.join('') + '\n strings: ' + strings.join(',') + '\n values: ' + value1 + ' - ' + value2 ;
+	}
+
+	AppLogger.info(myTagger`User ${name} will use\n my tagger here for ${a}st time`);
+
 }]);

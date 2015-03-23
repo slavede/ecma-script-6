@@ -48,8 +48,16 @@ main {
 .ecma6-view .ecma6-sidebar ul {
   list-style: none;
 }
+.ecma6-view .ecma6-sidebar ul li.header a {
+  font-size: 1.5em;
+  cursor: default;
+}
+.ecma6-view .ecma6-sidebar ul li.header a:hover {
+  text-decoration: none;
+  color: #428bca;
+}
 .ecma6-view .ecma6-sidebar ul li a {
-  font-size: 1.4em;
+  font-size: 1.1em;
 }
 .ecma6-view .ecma6-sidebar ul li a:hover {
   text-decoration: none;

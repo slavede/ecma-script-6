@@ -3,7 +3,7 @@ angular
 	.config(function($stateProvider, $urlRouterProvider) {
 		//
 		// For any unmatched url, redirect to /state1
-		$urlRouterProvider.otherwise("#/ecma6");
+		$urlRouterProvider.otherwise("/home");
 
 		
 
@@ -29,4 +29,7 @@ angular
 	})
 	.run(function($rootScope, AppLogger) {
 		$rootScope.appLogger = AppLogger;
+		$rootScope.$on('$stateChangeStart', function(event, next, current) {
+			$rootScope.appLogger.clear();
+		});
 	});
