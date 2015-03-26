@@ -79,7 +79,8 @@ module.exports = function (grunt) {
         },
       dist : {
         files : {
-          'app/scripts/controllers/templatestrings-babel.js' : 'app/scripts/controllers/templatestrings.js'  
+          'app/scripts/controllers/templatestrings-babel.js' : 'app/scripts/controllers/templatestrings.js',
+          'app/scripts/controllers/let-babel.js' : 'app/scripts/controllers/let.js'
         }
       }
     },
@@ -391,7 +392,7 @@ module.exports = function (grunt) {
       filesLength = files.length;
 
     for (var i = 0; i < filesLength; i++) {
-      // console.log("Reading ", files[i]);
+      console.log("Converting file ", files[i]);
       var readData = fs.readFileSync(files[i], {encoding:'utf-8'});
       // console.log(readData);
       if (files[i].indexOf('.map') > -1) {

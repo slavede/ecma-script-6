@@ -22,10 +22,20 @@ angular
 				templateUrl : 'partials/ecma6/templatestrings-babel.html',
 				controller : 'templatestrings-babel'
 			})
-			.state('home', {
-				url : '/home',
-				templateUrl : 'partials/home.html'
-			});
+			.state('ecma6.let', {
+				url : '/let',
+				templateUrl : 'partials/ecma6/let.html',
+				controller : 'let'
+			})
+			.state('ecma6.let-babel', {
+				url : '/let-babel',
+				templateUrl : 'partials/ecma6/let-babel.html',
+				controller : 'let-babel'
+			})
+			// .state('home', {
+			// 	url : '/home',
+			// 	templateUrl : 'partials/home.html'
+			// });
 	})
 	.run(function($rootScope, AppLogger) {
 		$rootScope.appLogger = AppLogger;
