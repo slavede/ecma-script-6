@@ -32,6 +32,16 @@ angular
 				templateUrl : 'partials/ecma6/let-babel.html',
 				controller : 'let-babel'
 			})
+			.state('ecma6.arrowfunction', {
+				url : '/arrowfunction',
+				templateUrl : 'partials/ecma6/arrowfunction.html',
+				controller : 'arrowfunction'
+			})
+			.state('ecma6.arrowfunction-babel', {
+				url : '/arrowfunction-babel',
+				templateUrl : 'partials/ecma6/arrowfunction-babel.html',
+				controller : 'arrowfunction-babel'
+			})
 			// .state('home', {
 			// 	url : '/home',
 			// 	templateUrl : 'partials/home.html'

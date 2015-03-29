@@ -80,7 +80,8 @@ module.exports = function (grunt) {
       dist : {
         files : {
           'app/scripts/controllers/templatestrings-babel.js' : 'app/scripts/controllers/templatestrings.js',
-          'app/scripts/controllers/let-babel.js' : 'app/scripts/controllers/let.js'
+          'app/scripts/controllers/let-babel.js' : 'app/scripts/controllers/let.js',
+          'app/scripts/controllers/arrowfunction-babel.js' : 'app/scripts/controllers/arrowfunction.js'
         }
       }
     },
@@ -419,6 +420,7 @@ module.exports = function (grunt) {
       'less:development',
       'wiredep',
       'concurrent:server',
+      'babel-build',
       'autoprefixer',
       'connect:livereload',
       'watch'

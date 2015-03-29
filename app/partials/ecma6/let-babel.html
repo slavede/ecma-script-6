@@ -1,6 +1,8 @@
 <h3>Let Block - Babel</h3>
 <ng-include src="'partials/ecma6/let-base.html'"></ng-include>
-<pre>
+<a ng-init="hidden=true" ng-show="hidden === true" ng-click="hidden = false">Show Babel</a>
+<a ng-show="hidden === false" ng-click="hidden = true">Hide Babel</a>
+<pre ng-show="hidden===false">
 "use strict";
 var a = 10,
     d = 11;

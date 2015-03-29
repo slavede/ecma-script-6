@@ -1,0 +1,39 @@
+<h3>Arrow Function - Babel</h3>
+<ng-include src="'partials/ecma6/arrowfunction-base.html'"></ng-include>
+<a ng-init="hidden=true" ng-show="hidden === true" ng-click="hidden = false">Show Babel</a>
+<a ng-show="hidden === false" ng-click="hidden = true">Hide Babel</a>
+<pre ng-show="hidden===false">
+var lion, arrowLion;
+function Lion(name) {
+	this.name = name;
+	this.heightThroughYears = [0.5, 0.7, 1.2];
+	this.roarAfter = function (miliseconds) {
+		setTimeout(function () {
+			AppLogger.info("Roar " + this.name);
+		});
+	};
+	this.roarArrow = function (miliseconds) {
+		var _this = this;
+
+		// no parameters => parenthesis required
+		setTimeout(function () {
+			AppLogger.info("Arrow roar " + _this.name);
+		});
+	};
+	this.showHeights = function () {
+		var _this = this;
+
+		// one parameter => not parenthesis
+		$(this.heightThroughYears).map(function (index) {
+			AppLogger.info(_this.heightThroughYears[index]);
+		});
+		$(this.heightThroughYears).map(function (index) {
+			AppLogger.info(this);
+		});
+	};
+}
+lion = new Lion("Slavko");
+lion.roarAfter(1500);
+lion.roarArrow(2500);
+lion.showHeights();
+</pre>
