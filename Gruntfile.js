@@ -81,7 +81,8 @@ module.exports = function (grunt) {
         files : {
           'app/scripts/controllers/templatestrings-babel.js' : 'app/scripts/controllers/templatestrings.js',
           'app/scripts/controllers/let-babel.js' : 'app/scripts/controllers/let.js',
-          'app/scripts/controllers/arrowfunction-babel.js' : 'app/scripts/controllers/arrowfunction.js'
+          'app/scripts/controllers/arrowfunction-babel.js' : 'app/scripts/controllers/arrowfunction.js',
+          'app/scripts/controllers/classes-babel.js' : 'app/scripts/controllers/classes.js'
         }
       }
     },

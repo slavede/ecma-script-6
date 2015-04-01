@@ -1,0 +1,104 @@
+"use strict";
+
+var _get = function get(object, property, receiver) { var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc && desc.writable) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
+
+var _inherits = function (subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; };
+
+var _createClass = (function () { function defineProperties(target, props) { for (var key in props) { var prop = props[key]; prop.configurable = true; if (prop.value) prop.writable = true; } Object.defineProperties(target, props); } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+var _classCallCheck = function (instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } };
+
+angular.module("EcmaScript6").controller("classes-babel", ["$scope", "AppLogger", function ($scope, AppLogger) {
+	var Vehicle = (function () {
+		function Vehicle(color, numberOfWheels) {
+			_classCallCheck(this, Vehicle);
+
+			this.vehicleColor = color;
+			this.numberOfWheels = numberOfWheels;
+		}
+
+		_createClass(Vehicle, {
+			wheels: {
+				get: function () {
+					return this.numberOfWheels;
+				}
+			},
+			makeASound: {
+				value: function makeASound() {
+					return "I'm unknown vehicle. Don't know how.";
+				}
+			},
+			color: {
+
+				// accessor properties
+
+				get: function () {
+					return this.vehicleColor;
+				},
+				set: function (color) {
+					this.vehicleColor = color;
+					return this.vehicleColor;
+				}
+			},
+			"string keyed method": {
+				value: function stringKeyedMethod() {
+					return "String Keyed Method";
+				}
+			}
+		}, {
+			minimumWheels: {
+				value: function minimumWheels() {
+					return 2;
+				}
+			}
+		});
+
+		return Vehicle;
+	})();
+
+	var Bicycle = (function (_Vehicle) {
+		function Bicycle(color) {
+			_classCallCheck(this, Bicycle);
+
+			_get(Object.getPrototypeOf(Bicycle.prototype), "constructor", this).call(this, color, 2);
+		}
+
+		_inherits(Bicycle, _Vehicle);
+
+		_createClass(Bicycle, {
+			makeASound: {
+				value: function makeASound() {
+					return "Ring Ring, but parent says: " + _get(Object.getPrototypeOf(Bicycle.prototype), "makeASound", this).call(this);
+				}
+			}
+		});
+
+		return Bicycle;
+	})(Vehicle);
+
+	AppLogger.info(Vehicle.prototype.makeASound !== undefined);
+	AppLogger.info(Vehicle.prototype["string keyed method"] !== undefined);
+	AppLogger.info(Vehicle.prototype.minimumWheels === undefined);
+
+	AppLogger.info(Vehicle.minimumWheels !== undefined);
+
+	var vehicle = new Vehicle("red");
+
+	AppLogger.info(vehicle.color);
+	AppLogger.info(vehicle.vehicleColor);
+	vehicle.color = "blue";
+	AppLogger.info(vehicle.color);
+	AppLogger.info(vehicle.vehicleColor);
+	AppLogger.info(vehicle.makeASound());
+
+	AppLogger.info(vehicle["string keyed method"]());
+
+	var bicycle = new Bicycle("black");
+	AppLogger.info(bicycle.wheels);
+	AppLogger.info(bicycle.color);
+
+	bicycle.color = "pink";
+	AppLogger.info(bicycle.color);
+	AppLogger.info(bicycle.makeASound());
+}]);
+//# sourceMappingURL=classes-babel.js.map

@@ -42,10 +42,11 @@ angular
 				templateUrl : 'partials/ecma6/arrowfunction-babel.html',
 				controller : 'arrowfunction-babel'
 			})
-			// .state('home', {
-			// 	url : '/home',
-			// 	templateUrl : 'partials/home.html'
-			// });
+			.state('ecma6.classes-babel', {
+				url : '/classes-babel',
+				templateUrl : 'partials/ecma6/classes-babel.html',
+				controller : 'classes-babel'
+			})
 	})
 	.run(function($rootScope, AppLogger) {
 		$rootScope.appLogger = AppLogger;
