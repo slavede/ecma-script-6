@@ -1,1 +1,13 @@
 <p></p>
+<pre>
+export function loggerInterceptor(logger, message) {
+	logger.info('loggerInterceptor --- ' + message);
+};
+
+export var variablePi = '3.141593';
+</pre>
+<pre>
+import {variablePi,loggerInterceptor} from 'mylogger';
+console.log(variablePi);
+console.log(loggerInterceptor(console, 'Angular Controller'));
+</pre>
