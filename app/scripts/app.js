@@ -47,6 +47,11 @@ angular
 				templateUrl : 'partials/ecma6/classes-babel.html',
 				controller : 'classes-babel'
 			})
+			.state('ecma6.modules-babel', {
+				url : '/modules-babel',
+				templateUrl : 'partials/ecma6/modules-babel.html',
+				controller : 'modules-babel'
+			})
 	})
 	.run(function($rootScope, AppLogger) {
 		$rootScope.appLogger = AppLogger;

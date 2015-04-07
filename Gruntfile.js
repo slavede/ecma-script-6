@@ -82,7 +82,8 @@ module.exports = function (grunt) {
           'app/scripts/controllers/templatestrings-babel.js' : 'app/scripts/controllers/templatestrings.js',
           'app/scripts/controllers/let-babel.js' : 'app/scripts/controllers/let.js',
           'app/scripts/controllers/arrowfunction-babel.js' : 'app/scripts/controllers/arrowfunction.js',
-          'app/scripts/controllers/classes-babel.js' : 'app/scripts/controllers/classes.js'
+          'app/scripts/controllers/classes-babel.js' : 'app/scripts/controllers/classes.js',
+          'app/scripts/controllers/modules-babel.js' : 'app/scripts/controllers/modules.js'
         }
       }
     },
@@ -146,7 +147,7 @@ module.exports = function (grunt) {
           {
             dot : true,
             src : [
-              '<%= config.app %>/scripts/**/*-babel*'
+              '<%= config.app %>/scripts/controllers/*-babel*'
             ]
           }
         ]
