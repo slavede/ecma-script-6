@@ -57,6 +57,11 @@ angular
 				templateUrl : 'partials/ecma6/default-parameters-babel.html',
 				controller : 'defaultParameters-babel'
 			})
+			.state('ecma6.rest-parameters-babel', {
+				url : '/rest-parameters-babel',
+				templateUrl : 'partials/ecma6/rest-parameters-babel.html',
+				controller : 'restParameters-babel'
+			})
 	})
 	.run(function($rootScope, AppLogger) {
 		$rootScope.appLogger = AppLogger;

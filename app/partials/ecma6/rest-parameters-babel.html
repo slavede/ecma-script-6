@@ -1,0 +1,19 @@
+<h3>Rest Parameters - Babel</h3>
+<ng-include src="'partials/ecma6/rest-parameters-base.html'"></ng-include>
+<a ng-init="hidden=true" ng-show="hidden === true" ng-click="hidden = false">Show Babel</a>
+<a ng-show="hidden === false" ng-click="hidden = true">Hide Babel</a>
+<pre ng-show="hidden===false">
+var sum = function sum(start) {
+	for (var _len = arguments.length, additional = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+		additional[_key - 1] = arguments[_key];
+	}
+
+	additional.forEach(function (val) {
+		start += val;
+	});
+	return start;
+};
+
+AppLogger.info(sum(1, 5, 7, 9, 10));
+AppLogger.info(sum(3));
+</pre>
