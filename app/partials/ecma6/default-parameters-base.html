@@ -1,0 +1,22 @@
+<p>
+	<ul>
+		<li>default parameter values of functions</li>
+		<li>evaulated in runtime (when function is called)</li>
+		<li>it can be based on other default parameters</li>
+		<li>explicit undefined defers to default</li>
+	</ul>
+</p>
+<pre>
+var extractFirst = function(word) {
+	return word.substring(0, 1);
+},
+isFirstCapital = function(word, firstLetter = extractFirst(word)) {
+	if (firstLetter.uppercase() === firstLetter) {
+		return true;
+	}
+};
+
+AppLogger.info(isFirstCapital('Slaven'));
+AppLogger.info(isFirstCapital('slaven'));
+AppLogger.info(isFirstCapital('slaven', 'S'));
+</pre>

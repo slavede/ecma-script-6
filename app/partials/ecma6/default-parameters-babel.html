@@ -1,0 +1,20 @@
+<h3>Default Parameters - Babel</h3>
+<ng-include src="'partials/ecma6/default-parameters-base.html'"></ng-include>
+<a ng-init="hidden=true" ng-show="hidden === true" ng-click="hidden = false">Show Babel</a>
+<a ng-show="hidden === false" ng-click="hidden = true">Hide Babel</a>
+<div ng-show="hidden===false">
+<pre>
+var extractFirst = function extractFirst(word) {
+	return word.substring(0, 1);
+},
+    isFirstCapital = function isFirstCapital(word) {
+	var firstLetter = arguments[1] === undefined ? extractFirst(word) : arguments[1];
+	return (function () {
+		return firstLetter.toUpperCase() === firstLetter;
+	})();
+};
+
+AppLogger.info(isFirstCapital("Slaven"));
+AppLogger.info(isFirstCapital("slaven"));
+AppLogger.info(isFirstCapital("slaven", "S"));
+</pre>
