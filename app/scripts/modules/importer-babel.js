@@ -1,18 +1,24 @@
-define('importer', ['exports', 'mylogger'], function (exports, _mylogger) {
-	'use strict';
+define('importer', ['exports', 'mylogger', 'sum'], function (exports, _mylogger, _sum) {
+        'use strict';
 
-	Object.defineProperty(exports, '__esModule', {
-		value: true
-	});
-	exports.exporter = exporter;
+        var _interopRequire = function (obj) { return obj && obj.__esModule ? obj['default'] : obj; };
 
-	console.log(_mylogger.variablePi);
-	console.log(_mylogger.loggerInterceptor(console, 'importer call'));
+        Object.defineProperty(exports, '__esModule', {
+                value: true
+        });
+        exports.exporter = exporter;
 
-	function exporter() {
-		return {
-			pi: _mylogger.variablePi,
-			loggerInterceptor: _mylogger.loggerInterceptor
-		};
-	}
+        var _sumCalculation = _interopRequire(_sum);
+
+        console.log(_mylogger.variablePi);
+        _mylogger.loggerInterceptor(console, 'importer call');
+        console.log(_sumCalculation(1, 2, 3));
+
+        function exporter() {
+                return {
+                        pi: _mylogger.variablePi,
+                        loggerInterceptor: _mylogger.loggerInterceptor,
+                        sumCalculation: _sumCalculation
+                };
+        }
 });

@@ -1,4 +1,5 @@
 <p></p>
+<p>mylogger.js</p>
 <pre>
 export function loggerInterceptor(logger, message) {
 	logger.info('loggerInterceptor --- ' + message);
@@ -6,8 +7,18 @@ export function loggerInterceptor(logger, message) {
 
 export var variablePi = '3.141593';
 </pre>
+<p>sum.js</p>
+<pre>
+export default function (a, b, c) { 
+	return a + b + c;
+};
+</pre>
+<p>importer.js</p>
 <pre>
 import {variablePi,loggerInterceptor} from 'mylogger';
+import sumCalculation from 'sum';
+
 console.log(variablePi);
-console.log(loggerInterceptor(console, 'Angular Controller'));
+loggerInterceptor(console, 'importer call')
+console.log(sumCalculation(1,2,3));
 </pre>

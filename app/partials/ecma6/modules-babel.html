@@ -2,5 +2,62 @@
 <ng-include src="'partials/ecma6/modules-base.html'"></ng-include>
 <a ng-init="hidden=true" ng-show="hidden === true" ng-click="hidden = false">Show Babel</a>
 <a ng-show="hidden === false" ng-click="hidden = true">Hide Babel</a>
-<pre ng-show="hidden===false">
+<div ng-show="hidden===false">
+	<p>Need separate babel conversion</p>
+	<pre>
+babel --modules amd --module-id id_to_generate js_to_convert
 </pre>
+	<p>sum.js</p>
+	<pre>
+define("sum", ["exports", "module"], function (exports, module) {
+        "use strict";
+
+        module.exports = function (a, b, c) {
+                return a + b + c;
+        };
+
+        ;
+});
+	</pre>
+	<p>mylogger.js</p>
+	<pre>
+define('mylogger', ['exports'], function (exports) {
+	'use strict';
+
+	Object.defineProperty(exports, '__esModule', {
+		value: true
+	});
+	exports.loggerInterceptor = loggerInterceptor;
+
+	function loggerInterceptor(logger, message) {
+		logger.info('loggerInterceptor --- ' + message);
+	}
+
+	;
+
+	var variablePi = '3.141593';
+	exports.variablePi = variablePi;
+});
+	</pre>
+	<p>importer.js</p>
+	<pre>
+define('importer', ['exports', 'mylogger'], function (exports, _mylogger) {
+	'use strict';
+
+	Object.defineProperty(exports, '__esModule', {
+		value: true
+	});
+	exports.exporter = exporter;
+
+	console.log(_mylogger.variablePi);
+	console.log(_mylogger.loggerInterceptor(console, 'importer call'));
+
+	function exporter() {
+		return {
+			pi: _mylogger.variablePi,
+			loggerInterceptor: _mylogger.loggerInterceptor
+		};
+	}
+});
+	</pre>
+</div>
