@@ -62,6 +62,16 @@ angular
 				templateUrl : 'partials/ecma6/rest-parameters-babel.html',
 				controller : 'restParameters-babel'
 			})
+			.state('ecma6.generators', {
+				url : '/generators',
+				templateUrl : 'partials/ecma6/generators.html',
+				controller : 'generators'
+			})
+			.state('ecma6.generators-babel', {
+				url : '/generators-babel',
+				templateUrl : 'partials/ecma6/generators-babel.html',
+				controller : 'generators-babel'
+			})
 	})
 	.run(function($rootScope, AppLogger) {
 		$rootScope.appLogger = AppLogger;
