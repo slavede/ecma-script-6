@@ -198,3 +198,76 @@ for (let i in myArray) {
 for (let i of myArray) {
 	console.log(i);
 }
+
+var students = [
+	{
+		id : '1',
+		privateData : {
+			name : 'Slaven',
+			lastName : 'Tomac'
+		}
+	},
+	{
+		id : '2',
+		privateData : {
+			name : 'Slavko',
+			lastName : 'Tomak'
+		}
+	}
+];
+
+function* studentsIterator(students) {
+	for (var student of students) {
+		if (student.id % 2 === 0) {
+			yield [student.id, student.privateData.name]	
+		}
+	}
+}
+
+for (var [id, name] of studentsIterator(students)) {
+	console.log(id + ' - ' + name);
+}
+
+var iterator = studentsIterator(students);
+console.log(iterator.next());
+console.log(iterator.next());
+console.log(iterator.next());
+
+
+var promise1 = new Promise(function(resolve, reject) {
+	var counter = 0, iterations = 5;
+	// something async here
+	setInterval(function() {
+		if (counter === iterations) {
+			resolve({
+				name : 'promise1',
+				value : Date.now()
+			});
+		}
+		counter++;
+	}, 500);
+
+promise1.then(function(values) {
+	console.log(values);
+}, function(values) {
+	console.log('I failed with values ' + values.value);
+});
+
+Promise.all([promise2, promise1, promise3])
+		.then(function(values) {
+			console.log('Finished everything!!!');
+			console.log(values);
+		}, function(values) {
+			console.log('SOmething failed');
+			console.log(values)
+		});
+		
+Promise.race([promise2, promise1, promise3])
+			.then(function(values) {
+				console.log('Race finished');
+				console.log(values);
+			}, function(values) {
+				console.log('Race failed');
+				console.log(values);
+			});
+

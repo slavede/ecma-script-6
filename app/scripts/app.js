@@ -72,6 +72,11 @@ angular
 				templateUrl : 'partials/ecma6/generators-babel.html',
 				controller : 'generators-babel'
 			})
+			.state('ecma6.promises', {
+				url : '/promises',
+				templateUrl : 'partials/ecma6/promises.html',
+				controller : 'promises'
+			})
 	})
 	.run(function($rootScope, AppLogger) {
 		$rootScope.appLogger = AppLogger;
