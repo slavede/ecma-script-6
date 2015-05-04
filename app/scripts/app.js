@@ -87,6 +87,16 @@ angular
 				templateUrl : 'partials/ecma6/map-babel.html',
 				controller : 'map-babel'
 			})
+			.state('ecma6.set', {
+				url : '/set',
+				templateUrl : 'partials/ecma6/set.html',
+				controller : 'set'
+			})
+			.state('ecma6.set-babel', {
+				url : '/set-babel',
+				templateUrl : 'partials/ecma6/set-babel.html',
+				controller : 'set-babel'
+			})
 	})
 	.run(function($rootScope, AppLogger) {
 		$rootScope.appLogger = AppLogger;
