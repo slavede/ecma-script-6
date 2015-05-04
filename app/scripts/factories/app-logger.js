@@ -17,6 +17,12 @@ angular.module("EcmaScript6").
 			logger.logs.info.push(message);
 			$log.info(message);
 		};
+		logger.infoSeparator = function(char) {
+			var separateWith = char || '-',
+				separateWith = Array(20).join(separateWith);
+			logger.logs.info.push(separateWith);
+			$log.info(separateWith);
+		};
 		logger.warn = function(message) {
 			logger.logs.warn.push(message);
 			$log.warn(message);

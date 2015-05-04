@@ -271,3 +271,27 @@ Promise.race([promise2, promise1, promise3])
 				console.log(values);
 			});
 
+var object1 = {
+	name : 'Slaven'
+},
+object2 = {
+	surname : 'Tomac'
+},
+object3 = {
+	surname : 'Tomac'
+},
+myMap = new Map([
+					[object1,'ObjectWithNameOnly'],
+					['myKey1',object1],
+					[object2,object1]
+				]);
+
+console.log(myMap.get(object1));
+console.log(myMap.get('myKey1'));
+console.log(myMap.get(object3));
+
+console.log(myMap.get(myMap.get('myKey1')));
+
+for (var [key, val] of myMap) {
+	. . .
+}

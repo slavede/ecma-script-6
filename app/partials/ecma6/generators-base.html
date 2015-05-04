@@ -1,6 +1,9 @@
 <p>
-	<h4>for..of</h4>
-	<pre>
+Iterators allow us different way of iteration through our collections of data
+</p>
+<h4>for..of</h4>
+<p>To use custom iterators we use for..of. Object doesn't have default iterator (array, string and map do have one)</p>
+<pre>
 var myArray = [9, 8, 7];
 for (let i in myArray) {
 	AppLogger.info(i);
@@ -9,8 +12,9 @@ for (let i in myArray) {
 for (let i of myArray) {
 	AppLogger.info(i);
 }
-	</pre>
-	<pre>
+</pre>
+<h4>Creating your own generator</h4>
+<pre>
 var students = [
 	{
 		id : 1,
@@ -46,12 +50,12 @@ function* studentsIterator(students) {
 for (var [id, name] of studentsIterator(students)) {
 	AppLogger.info(id + ' - ' + name);
 }
-	</pre>
-	<pre>
+</pre>
+<h4>Using your generator</h4>
+<pre>
 var iterator = studentsIterator(students);
 AppLogger.info(iterator.next());
 AppLogger.info(iterator.next());
 AppLogger.info(iterator.next());
 AppLogger.info(iterator.next());
-	</pre>
-</p>
+</pre>

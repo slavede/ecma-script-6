@@ -87,7 +87,8 @@ module.exports = function (grunt) {
           'app/scripts/controllers/default-parameters-babel.js' : 'app/scripts/controllers/default-parameters.js',
           'app/scripts/controllers/rest-parameters-babel.js' : 'app/scripts/controllers/rest-parameters.js',
           'app/scripts/controllers/generators-babel.js' : 'app/scripts/controllers/generators.js',
-          'app/scripts/controllers/promises-babel.js' : 'app/scripts/controllers/promises.js'
+          'app/scripts/controllers/promises-babel.js' : 'app/scripts/controllers/promises.js',
+          'app/scripts/controllers/map-babel.js' : 'app/scripts/controllers/map.js'
         }
       }
     },

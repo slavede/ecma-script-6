@@ -1,0 +1,75 @@
+<p>
+	Object where key can be anything (any other object).
+</p>
+<h5>Constructor</h5>
+<pre>
+var object1 = {
+	name : 'Slaven'
+},
+object2 = {
+	surname : 'Tomac'
+},
+object3 = {
+	surname : 'Tomac'
+},
+myMap = new Map([
+	[object1,'ObjectWithNameOnly'],
+	['myKey1',object1],
+	[object2,object1]
+]);
+</pre>
+<h5>.get</h5>
+<pre>
+AppLogger.info(myMap.get(object1));
+AppLogger.info(myMap.get('myKey1'));
+AppLogger.info(myMap.get(object3));
+AppLogger.info(myMap.get(myMap.get('myKey1')));
+</pre>
+<h5>.delete</h5>
+<pre>
+AppLogger.info(myMap.get(object1));
+myMap.delete(object1);
+AppLogger.info(myMap.get(object1));
+</pre>
+<h5>.entries</h5>
+<pre>
+var iterator = myMap.entries();
+AppLogger.info(iterator.next());
+AppLogger.info(iterator.next());
+AppLogger.info(iterator.next());
+</pre>
+<h5>.forEach</h5>
+<pre>
+myMap.forEach(function(val) {
+	AppLogger.info(val);
+});
+</pre>
+<h5>.set/.has</h5>
+<pre>
+AppLogger.info(myMap.has(object3));
+myMap.set(object3, 'setObject');
+AppLogger.info(myMap.has(object3));
+</pre>
+<h5>.keys</h5>
+<pre>
+var keysIterator = myMap.keys();
+AppLogger.info(keysIterator.next());
+AppLogger.info(keysIterator.next());
+AppLogger.info(keysIterator.next());
+</pre>
+<h5>.values</h5>
+<pre>
+var valuesIterator = myMap.values();
+AppLogger.info(valuesIterator.next());
+AppLogger.info(valuesIterator.next());
+AppLogger.info(valuesIterator.next());
+</pre>
+<h5>for..of iterator</h5>
+<pre>
+for (var [key, val] of myMap) {
+	AppLogger.info('key');
+	AppLogger.info(key);
+	AppLogger.info('val');
+	AppLogger.info(val);
+}
+</pre>

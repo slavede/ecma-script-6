@@ -34,7 +34,7 @@ angular.module("EcmaScript6").controller("promises-babel", ["$scope", "AppLogger
 				value: Date.now()
 			});
 		}, 100);
-		AppLogger.info("Started timeout in promise 2");
+		AppLogger.info("Started timeout in promise 3");
 	});
 
 	promise1.then(function (values) {
