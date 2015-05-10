@@ -30,6 +30,10 @@ module.exports = function (grunt) {
     // Project settings
     config: config,
 
+    serve: {
+      'path' : './index.html'
+    },
+
     // Watches files for changes and runs tasks based on the changed files
     watch: {
       bower: {
@@ -109,7 +113,8 @@ module.exports = function (grunt) {
             return [
               connect.static('.tmp'),
               connect().use('/bower_components', connect.static('./bower_components')),
-              connect.static(config.app)
+              connect.static(config.app),
+              connect.static('.')
             ];
           }
         }
@@ -204,7 +209,7 @@ module.exports = function (grunt) {
     wiredep: {
       app: {
         ignorePath: /^\/|\.\.\//,
-        src: ['<%= config.app %>/index.html'],
+        src: ['index.html'],
         exclude: ['bower_components/bootstrap/dist/js/bootstrap.js']
       }
     },
@@ -231,7 +236,7 @@ module.exports = function (grunt) {
       options: {
         dest: '<%= config.dist %>'
       },
-      html: '<%= config.app %>/index.html'
+      html: 'index.html'
     },
 
     // Performs rewrites based on rev and the useminPrepare configuration
