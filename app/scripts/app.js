@@ -10,91 +10,91 @@ angular
 		$stateProvider
 			.state('ecma6', {
 				url : '/ecma6',
-				templateUrl : 'partials/ecma6.html'
+				templateUrl : 'app/partials/ecma6.html'
 			})
 			.state('ecma6.templatestrings', {
 				url : '/templatestrings',
-				templateUrl : 'partials/ecma6/templatestrings.html',
+				templateUrl : 'app/partials/ecma6/templatestrings.html',
 				controller : 'templatestrings'
 			})
 			.state('ecma6.templatestrings-babel', {
 				url : '/templatestrings-babel',
-				templateUrl : 'partials/ecma6/templatestrings-babel.html',
+				templateUrl : 'app/partials/ecma6/templatestrings-babel.html',
 				controller : 'templatestrings-babel'
 			})
 			.state('ecma6.let', {
 				url : '/let',
-				templateUrl : 'partials/ecma6/let.html',
+				templateUrl : 'app/partials/ecma6/let.html',
 				controller : 'let'
 			})
 			.state('ecma6.let-babel', {
 				url : '/let-babel',
-				templateUrl : 'partials/ecma6/let-babel.html',
+				templateUrl : 'app/partials/ecma6/let-babel.html',
 				controller : 'let-babel'
 			})
 			.state('ecma6.arrowfunction', {
 				url : '/arrowfunction',
-				templateUrl : 'partials/ecma6/arrowfunction.html',
+				templateUrl : 'app/partials/ecma6/arrowfunction.html',
 				controller : 'arrowfunction'
 			})
 			.state('ecma6.arrowfunction-babel', {
 				url : '/arrowfunction-babel',
-				templateUrl : 'partials/ecma6/arrowfunction-babel.html',
+				templateUrl : 'app/partials/ecma6/arrowfunction-babel.html',
 				controller : 'arrowfunction-babel'
 			})
 			.state('ecma6.classes-babel', {
 				url : '/classes-babel',
-				templateUrl : 'partials/ecma6/classes-babel.html',
+				templateUrl : 'app/partials/ecma6/classes-babel.html',
 				controller : 'classes-babel'
 			})
 			.state('ecma6.modules-babel', {
 				url : '/modules-babel',
-				templateUrl : 'partials/ecma6/modules-babel.html',
+				templateUrl : 'app/partials/ecma6/modules-babel.html',
 				controller : 'modules-babel'
 			})
 			.state('ecma6.default-parameters-babel', {
 				url : '/default-parameters-babel',
-				templateUrl : 'partials/ecma6/default-parameters-babel.html',
+				templateUrl : 'app/partials/ecma6/default-parameters-babel.html',
 				controller : 'defaultParameters-babel'
 			})
 			.state('ecma6.rest-parameters-babel', {
 				url : '/rest-parameters-babel',
-				templateUrl : 'partials/ecma6/rest-parameters-babel.html',
+				templateUrl : 'app/partials/ecma6/rest-parameters-babel.html',
 				controller : 'restParameters-babel'
 			})
 			.state('ecma6.generators', {
 				url : '/generators',
-				templateUrl : 'partials/ecma6/generators.html',
+				templateUrl : 'app/partials/ecma6/generators.html',
 				controller : 'generators'
 			})
 			.state('ecma6.generators-babel', {
 				url : '/generators-babel',
-				templateUrl : 'partials/ecma6/generators-babel.html',
+				templateUrl : 'app/partials/ecma6/generators-babel.html',
 				controller : 'generators-babel'
 			})
 			.state('ecma6.promises', {
 				url : '/promises',
-				templateUrl : 'partials/ecma6/promises.html',
+				templateUrl : 'app/partials/ecma6/promises.html',
 				controller : 'promises'
 			})
 			.state('ecma6.map', {
 				url : '/map',
-				templateUrl : 'partials/ecma6/map.html',
+				templateUrl : 'app/partials/ecma6/map.html',
 				controller : 'map'
 			})
 			.state('ecma6.map-babel', {
 				url : '/map-babel',
-				templateUrl : 'partials/ecma6/map-babel.html',
+				templateUrl : 'app/partials/ecma6/map-babel.html',
 				controller : 'map-babel'
 			})
 			.state('ecma6.set', {
 				url : '/set',
-				templateUrl : 'partials/ecma6/set.html',
+				templateUrl : 'app/partials/ecma6/set.html',
 				controller : 'set'
 			})
 			.state('ecma6.set-babel', {
 				url : '/set-babel',
-				templateUrl : 'partials/ecma6/set-babel.html',
+				templateUrl : 'app/partials/ecma6/set-babel.html',
 				controller : 'set-babel'
 			})
 	})
