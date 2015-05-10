@@ -295,3 +295,18 @@ console.log(myMap.get(myMap.get('myKey1')));
 for (var [key, val] of myMap) {
 	. . .
 }
+
+
+var object1 = {
+	name : 'Slaven'
+},
+object2 = {
+	surname : 'Tomac'
+},
+object3 = {
+	surname : 'Tomac'
+},
+mySet = new Set([object1, 'StringObject', 2, object2, object1]);
+
+console.log(myMap.size);
+console.log(myMap.has(object1));
