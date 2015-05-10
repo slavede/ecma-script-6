@@ -35,7 +35,7 @@
       <main ui-view>
       </main>
 
-      <div class="log-output">
+      <div class="log-output ng-hide" ng-show="appLogger.logs.info.length > 0">
         <h3>AppLogger</h3>
         <pre ng-repeat="info in appLogger.logs.info track by $index">{{info}}</pre>
       </div>

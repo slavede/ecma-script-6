@@ -3,11 +3,15 @@ angular
 	.config(function($stateProvider, $urlRouterProvider) {
 		//
 		// For any unmatched url, redirect to /state1
-		$urlRouterProvider.otherwise("/home");
+		$urlRouterProvider.otherwise("/");
 
 		
 
 		$stateProvider
+			.state('home', {
+				url : '/',
+				templateUrl : 'app/partials/home.html'
+			})
 			.state('ecma6', {
 				url : '/ecma6',
 				templateUrl : 'app/partials/ecma6.html'
