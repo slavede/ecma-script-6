@@ -1,11 +1,6 @@
 angular
 	.module('EcmaScript6', ['ui.router'])
 	.config(function($stateProvider, $urlRouterProvider) {
-
-		require.config({
-			baseUrl: "app/scripts/modules"
-		});
-
 		//
 		// For any unmatched url, redirect to /state1
 		$urlRouterProvider.otherwise("/home");

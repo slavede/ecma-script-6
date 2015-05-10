@@ -64,6 +64,11 @@
       ga('create','UA-XXXXX-X');ga('send','pageview');
     </script>
         <script src="http://requirejs.org/docs/release/2.1.17/minified/require.js"></script>
+        <script>
+          require.config({
+            baseUrl: "app/scripts/modules"
+          });
+        </script>
         <!-- build:js(.) app/scripts/plugins.js -->
         <script src="bower_components/bootstrap/js/affix.js"></script>
         <script src="bower_components/bootstrap/js/alert.js"></script>
