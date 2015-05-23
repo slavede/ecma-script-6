@@ -101,6 +101,11 @@ angular
 				templateUrl : 'app/partials/ecma6/set-babel.html',
 				controller : 'set-babel'
 			})
+			.state('ecma6.const', {
+				url : '/const',
+				templateUrl : 'app/partials/ecma6/const.html',
+				controller : 'const'
+			})
 	})
 	.run(function($rootScope, AppLogger) {
 		$rootScope.appLogger = AppLogger;
