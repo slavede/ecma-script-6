@@ -1,5 +1,15 @@
-<p>String literals that allow string interpolation and multilie strings.</p>
-<p>They are enclosed with a back-tick (`) and can have placeholders for interpolation which are enclosed with dollar sign and curly braces (${});</p>
+<p>String literals that allow string interpolation and multiline strings.</p>
+<ul>
+	<li>Template strings are enclosed with a back-tick (`) with placeholders enclosed with ${variable}</li>
+	<li>They can be multilined without any special sign for new line</li>
+	<li>Tagged functions allow you to pass values to function instead of default concatenation
+		<ul>
+			<li>First parameter is array of string from original enclosed string</li>
+			<li>First parameter has also raw property (not interpolated)</li>
+			<li>Rest of params are variables from placeholders (enclosed by ${}). Useful to use rest parameters for them (...). See <a ui-sref="ecma6.rest-parameters-babel">Rest Parameter Examples</a> for more details</li>
+		</ul>
+	</li>
+</ul>
 <pre>
 var name = "Slaven", surname = "Tomac";
 

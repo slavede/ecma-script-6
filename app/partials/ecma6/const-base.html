@@ -7,3 +7,23 @@
 	</ul>
 </p>
 There is no babel example because browsers support it. Even it they don't, when it comes to compilation of ES6 to ES5 in Babel, it checks for syntax/logic errors in file, and I couldn't show throwing of exceptions there in case of, for example, redefining constant.
+<pre>
+'use strict';
+var myInnerConstant;
+
+const myConstant = 123;
+
+if (myConstant === 123) {
+	const myInnerConstant = 444;
+	AppLogger.info('In the block: ' + myInnerConstant);
+}
+
+AppLogger.info('Outside the block: ' + myInnerConstant);
+
+try {
+	myConstant = 666;
+} catch (e) {
+	AppLogger.info('Thrown exception because of trying to redefine it');
+	console.log(e);
+}
+</pre>

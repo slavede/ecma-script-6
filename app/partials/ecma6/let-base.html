@@ -1,4 +1,12 @@
 <p>Let allows new way of declaring variables. We can now decide variable is only visible inside block scope (e.g if, switch etc.)</p>
+<ul>
+	<li>Declaration of same variable name with let in same block scope raised TypeError.
+		<ul>
+			<li>Body of function doesn't have this behaviour</li>
+		</ul>
+	</li>
+	<li>It doesn't hoist up</li>
+</ul>
 <pre>
 'use strict';
 var a = 10, d = 11;
