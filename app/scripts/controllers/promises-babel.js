@@ -59,15 +59,15 @@ angular.module("EcmaScript6").controller("promises-babel", ["$scope", "AppLogger
 		AppLogger.info("Race finished");
 		AppLogger.info(values);
 	}, function (values) {
-		AppLogger.info("Race failed");
+		AppLogger.info("Race failed because of 3rd promise");
 		AppLogger.info(values);
 	});
 
 	Promise.all([promise2, promise1, promise3]).then(function (values) {
-		AppLogger.info("Finished everything!!!");
+		AppLogger.info("Finished everything with 3 promises!!!");
 		AppLogger.info(values);
 	}, function (values) {
-		AppLogger.info("SOmething failed");
+		AppLogger.info("Something failed with 3 promises");
 		AppLogger.info(values);
 	});
 }]);

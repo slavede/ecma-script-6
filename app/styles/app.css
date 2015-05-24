@@ -34,6 +34,9 @@ main {
   display: inline;
   float: left;
 }
+.focused {
+  border: 1px solid red;
+}
 .ecma6-view .ecma6-content {
   width: 83%;
   display: inline;

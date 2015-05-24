@@ -1,21 +1,13 @@
 <p>String literals that allow string interpolation and multiline strings.</p>
 <ul>
 	<li>Template strings are enclosed with a back-tick (`) with placeholders enclosed with ${variable}</li>
-	<li>They can be multilined without any special sign for new line</li>
-	<li>Tagged functions allow you to pass values to function instead of default concatenation
-		<ul>
-			<li>First parameter is array of string from original enclosed string</li>
-			<li>First parameter has also raw property (not interpolated)</li>
-			<li>Rest of params are variables from placeholders (enclosed by ${}). Useful to use rest parameters for them (...). See <a ui-sref="ecma6.rest-parameters-babel">Rest Parameter Examples</a> for more details</li>
-		</ul>
-	</li>
-</ul>
-<pre>
+	<pre>
 var name = "Slaven", surname = "Tomac";
 
 AppLogger.info(`Hello there ${name} ${surname} !`);
-
-
+	</pre>
+	<li>They can be multilined without any special sign for new line</li>
+	<pre>
 var multilineString = `This is my multiline string ${name}
 						and what will you do about it?
 
@@ -23,13 +15,24 @@ var multilineString = `This is my multiline string ${name}
 						`;
 
 AppLogger.info(multilineString);
-
+	</pre>
+	<li>It can to calculation inside {}</li>
+	<pre>
 var a = 1;
 AppLogger.info(`I can also calculate in string now : ${5 + a}`);
-
+	</pre>
+	<li>Tagged functions allow you to pass values to function instead of default concatenation
+		<ul>
+			<li>First parameter is array of string from original enclosed string</li>
+			<li>First parameter has also raw property (not interpolated)</li>
+			<li>Rest of params are variables from placeholders (enclosed by ${}). Useful to use rest parameters for them (...). See <a ui-sref="ecma6.rest-parameters-babel">Rest Parameter Examples</a> for more details</li>
+		</ul>
+	</li>
+	<pre>
 function myTagger(strings, value1, value2) {
 	return 'raw: ' + strings.raw.join(',') + '\n strings: ' + strings.join(',') + '\n values: ' + value1 + ' - ' + value2 ;
 }
 
 AppLogger.info(myTagger`User ${name} will use\n my tagger here for ${a}st time`);
-</pre>
+	</pre>
+</ul>

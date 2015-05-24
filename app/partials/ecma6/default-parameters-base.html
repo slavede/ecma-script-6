@@ -1,11 +1,11 @@
 <p>
-	<ul>
-		<li>default parameter values of functions</li>
-		<li>evaulated in runtime (when function is called)</li>
-		<li>it can be based on other default parameters</li>
-		<li>explicit undefined defers to default</li>
-	</ul>
+	Default parameters define value if value is not given while calling the function (or undefined passed).
 </p>
+<ul>
+	<li>Evaulated in runtime (when function is called)</li>
+	<li>It can be based on other default parameters (firstLetter based on word in example)</li>
+	<li>Explicit undefined defers to default</li>
+</ul>
 <pre>
 var extractFirst = function(word) {
 	return word.substring(0, 1);

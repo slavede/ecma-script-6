@@ -1,7 +1,15 @@
 <p>
+	In case you have optional number of parameters you need to send into function
+</p>
 	<ul>
-		<li>variable number of parameters in function</li>
-		<li>replaces arguments variable</li>
+		<li>Using '...' before name of last argument of function</li>
+		<li>Replaces arguments variable, but with few differences:
+			<ul>
+				<li>arguments parameter contains ALL parameters passed to function, '...'-parameters are only those which are not named parameter (the rest of the parameters)</li>
+				<li>arguments parameter is not real Array</li>
+			</ul>
+		</li>
+
 	</ul>
 </p>
 <pre>

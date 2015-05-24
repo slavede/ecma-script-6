@@ -1,5 +1,8 @@
-angular.module('EcmaScript6').controller('generators', ['$scope', 'AppLogger', function($scope, AppLogger) {
+angular.module('EcmaScript6').controller('generators', ['$scope', 'AppLogger', '$location', '$anchorScroll', function($scope, AppLogger, $location, $anchorScroll) {
 	'use strict';
+	$scope.iterators = $location.hash() === 'iterators';
+	$scope.forOfGenerators = $location.hash() === 'for-of-generators';
+	
 	var myArray = [9, 8, 7];
 	for (let i in myArray) {
 		AppLogger.info(i);

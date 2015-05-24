@@ -5,7 +5,7 @@ angular.module('EcmaScript6').controller('arrowfunction', ['$scope', 'AppLogger'
 		this.heightThroughYears = [0.5,0.7,1.2];
 		this.roarAfter = function (miliseconds) {
 			$timeout(function() {
-				AppLogger.info("Roar " + this.name);
+				AppLogger.info("Roar " + this);
 			}, miliseconds);
 		};
 		this.roarArrow = function(miliseconds) {
@@ -27,5 +27,6 @@ angular.module('EcmaScript6').controller('arrowfunction', ['$scope', 'AppLogger'
 	lion = new Lion("Slavko");
 	lion.roarAfter(1500);
 	lion.roarArrow(2500);
+	AppLogger.info('Showing heights');
 	lion.showHeights();
 }]);

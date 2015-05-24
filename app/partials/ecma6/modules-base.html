@@ -1,4 +1,10 @@
-<p></p>
+<p>ES5 doesn't have built in support for modules which is solved by using CommonJS Modules (e.g. NodeJS modules) and AMD modules (e.g. RequireJS). ES6 gets this built in</p>
+<ul>
+	<li>With named exports we can export/import more variables (mylogger.js in examples)</li>
+	<li>Default exports defines what's being imported by default into other module (sum.js). Only one per module</li>
+	<li>Combination of both is possible as well</li>
+</ul>
+
 <p>mylogger.js</p>
 <pre>
 export function loggerInterceptor(logger, message) {
@@ -18,7 +24,7 @@ export default function (a, b, c) {
 import {variablePi,loggerInterceptor} from 'mylogger';
 import sumCalculation from 'sum';
 
-console.log(variablePi);
-loggerInterceptor(console, 'importer call')
-console.log(sumCalculation(1,2,3));
+AppLogger.info(variablePi);
+loggerInterceptor(AppLogger, 'importer call')
+AppLogger.info(sumCalculation(1,2,3));
 </pre>

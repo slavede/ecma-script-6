@@ -1,7 +1,9 @@
 <p>
-	Object where key can be anything (any other object).
+	Key/value object where key can be anything (any other object).
 </p>
-<h5>Constructor</h5>
+<ul>
+	<li>When constructing map, value must be iterable and each value must constist of key-value pair (for example, array of 2-element arrays where first element is key)</li>
+	<li>Key equality is based on '===' operator. And NaN is matched to NaN even though NaN !== NaN</li>
 <pre>
 var object1 = {
 	name : 'Slaven'
@@ -18,53 +20,53 @@ myMap = new Map([
 	[object2,object1]
 ]);
 </pre>
-<h5>.get</h5>
+<li>.get(key) method returns value for the key, or undefined if it doesn't exist</li>
 <pre>
 AppLogger.info(myMap.get(object1));
 AppLogger.info(myMap.get('myKey1'));
 AppLogger.info(myMap.get(object3));
 AppLogger.info(myMap.get(myMap.get('myKey1')));
 </pre>
-<h5>.delete</h5>
+<li>.delete(key) method deletes object with given key and returns true/false based if key existed or not</li>
 <pre>
 AppLogger.info(myMap.get(object1));
 myMap.delete(object1);
 AppLogger.info(myMap.get(object1));
 </pre>
-<h5>.entries</h5>
+<li>.entries() returns iterator for iterating map. Each .next() call returns object with key-value pair (see <a href="#/ecma6/generators-babel#iterators">Generators</a> for more details how iterators work).</li>
 <pre>
 var iterator = myMap.entries();
 AppLogger.info(iterator.next());
 AppLogger.info(iterator.next());
 AppLogger.info(iterator.next());
 </pre>
-<h5>.forEach</h5>
+<li>.forEach() returns iterator which contains an array of key-value pair for each element</li>
 <pre>
 myMap.forEach(function(val) {
 	AppLogger.info(val);
 });
 </pre>
-<h5>.set/.has</h5>
+<li>.has(key) returns true/false if object has (or hasn't key). .set(key, value) sets value under specified key</li>
 <pre>
 AppLogger.info(myMap.has(object3));
 myMap.set(object3, 'setObject');
 AppLogger.info(myMap.has(object3));
 </pre>
-<h5>.keys</h5>
+<li>.keys() returns iterator over the keys.</li>
 <pre>
 var keysIterator = myMap.keys();
 AppLogger.info(keysIterator.next());
 AppLogger.info(keysIterator.next());
 AppLogger.info(keysIterator.next());
 </pre>
-<h5>.values</h5>
+<li>.values() returns iterator over the values</li>
 <pre>
 var valuesIterator = myMap.values();
 AppLogger.info(valuesIterator.next());
 AppLogger.info(valuesIterator.next());
 AppLogger.info(valuesIterator.next());
 </pre>
-<h5>for..of iterator</h5>
+<li>Map object has default iterator which can be used in for..of iterator. It iterates over key-value pairs (see <a href="#/ecma6/generators-babel#for-of-generators">Generators-for..of</a> for more details about default iterators)</li>
 <pre>
 for (var [key, val] of myMap) {
 	AppLogger.info('key');
@@ -73,3 +75,4 @@ for (var [key, val] of myMap) {
 	AppLogger.info(val);
 }
 </pre>
+</ul>

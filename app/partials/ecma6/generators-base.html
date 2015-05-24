@@ -1,8 +1,18 @@
 <p>
-Iterators allow us different way of iteration through our collections of data
+	Generators allow us different way of iteration through our collections of data.
 </p>
+<ul>
+	<li>When calling generator first <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#iterator" target="_blank">Iterator object</a> is returned.</li>
+	<li id="iterators" ng-class="{focused:iterators}">Calling .next() on iterator object we are calling generator. It returns object with two properties back
+		<ul>
+			<li>'value' property contains what was 'yielded' back</li>
+			<li>'done' is boolean which indicates if there is some data still</li>
+		</ul>
+	</li>
+</ul>
+<div id="for-of-generators" ng-class="{focused:forOfGenerators}">
 <h4>for..of</h4>
-<p>To use custom iterators we use for..of. Object doesn't have default iterator (array, string and map do have one)</p>
+<p>To use custom iterators we use for..of. JavaScript Object doesn't have default iterator (array, string and map do have one)</p>
 <pre>
 var myArray = [9, 8, 7];
 for (let i in myArray) {
@@ -13,6 +23,7 @@ for (let i of myArray) {
 	AppLogger.info(i);
 }
 </pre>
+</div>
 <h4>Creating your own generator</h4>
 <pre>
 var students = [

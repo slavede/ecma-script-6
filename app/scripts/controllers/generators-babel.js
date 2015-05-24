@@ -2,7 +2,7 @@
 
 var _slicedToArray = function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { var _arr = []; for (var _iterator = arr[Symbol.iterator](), _step; !(_step = _iterator.next()).done;) { _arr.push(_step.value); if (i && _arr.length === i) break; } return _arr; } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } };
 
-angular.module("EcmaScript6").controller("generators-babel", ["$scope", "AppLogger", function ($scope, AppLogger) {
+angular.module("EcmaScript6").controller("generators-babel", ["$scope", "AppLogger", "$location", "$anchorScroll", function ($scope, AppLogger, $location, $anchorScroll) {
 	"use strict";
 	var studentsIterator = regeneratorRuntime.mark(function studentsIterator(students) {
 		var _iteratorNormalCompletion2, _didIteratorError2, _iteratorError2, _iterator2, _step2, student;
@@ -77,6 +77,9 @@ angular.module("EcmaScript6").controller("generators-babel", ["$scope", "AppLogg
 			}
 		}, studentsIterator, this, [[3, 15, 19, 27], [20,, 22, 26]]);
 	});
+	$scope.iterators = $location.hash() === "iterators";
+	$scope.forOfGenerators = $location.hash() === "for-of-generators";
+
 	var myArray = [9, 8, 7];
 	for (var i in myArray) {
 		AppLogger.info(i);

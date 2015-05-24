@@ -1,23 +1,24 @@
-<p>Replaces prototypes</p>
-<pre>
+<p>Replacement for prototype-based inheritance</p>
+<ul>
+	<li>To create a class you should use keyword 'class'</li>
+	<pre>
 class Vehicle {
+	</pre>
+	<li>Reserved word 'constructor' for constructor. Only one per class.</li>
+	<pre>
 	constructor(color, numberOfWheels) {
 		this.vehicleColor = color;
 		this.numberOfWheels = numberOfWheels;
 	}
-
+	</pre>
+	<li>Allows creation of static methods (they are not in prototype)</li>
+	<pre>
 	static minimumWheels() {
 		return 2;
 	}
-
-	get wheels () {
-		return this.numberOfWheels;
-	}
-
-	makeASound () {
-		return "I'm unknown vehicle. Don't know how."
-	}
-
+	</pre>
+	<li>Accessor properties</li>
+	<pre>
 	// accessor properties
 	get color() {
 		return this.vehicleColor;
@@ -27,18 +28,34 @@ class Vehicle {
 		this.vehicleColor = color;
 		return this.vehicleColor;
 	}
+	get wheels () {
+		return this.numberOfWheels;
+	}
+	</pre>
+	<li>Public methods (all of them are placed in protototype) can be string keyed</li>
+	<pre>
+	makeASound () {
+		return "I'm unknown vehicle. Don't know how."
+	}
+
+
 
 	"string keyed method"() {
 		return "String Keyed Method"
 	}
 }
-
+	</pre>
+	<li>To inherit from another class you should use 'extends' keyword. Call parent functions with super.method_name</li>
+<pre>
 class Bicycle extends Vehicle{
 	constructor(color) {
 		super(color, 2);
 	}
 }
+</pre>
+</ul>
 
+<pre>
 AppLogger.info(Vehicle.prototype.makeASound !== undefined);
 AppLogger.info(Vehicle.prototype["string keyed method"] !== undefined);
 AppLogger.info(Vehicle.prototype.minimumWheels === undefined);

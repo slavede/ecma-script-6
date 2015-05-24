@@ -1,8 +1,15 @@
 <p>
-Way of async programming. Resolving/rejecting data after some processing.
+Way of asynchronous/deferred programming programming. Resolving/rejecting data after some processing.
 </p>
+<ul>
+	<li>Promise constructor gets two parameters
+		<ul>
+			<li>First one is function with which we can successful fulfill operation (success message of caller will be called with data passed into it)</li>
+			<li>Second one is function with which we reject operation (error message of caller will be called with data passed into i) (</li>
+		</ul>
+	</li>
 <pre>
-var promise1 = new Promise(function(resolve1, reject2) {
+var promise1 = new Promise(function(resolve1, reject1) {
 	var counter = 0, iterations = 5;
 	// something async here
 	$interval(function() {
@@ -35,12 +42,14 @@ var promise1 = new Promise(function(resolve1, reject2) {
 	AppLogger.info('Started timeout in promise 3');
 });
 </pre>
+	<li>When promise is successfully fulfilled, function that was passed in .then is called with parameters given from called resolve function</li>
 <pre>
 promise1.then(function(values) {
 	AppLogger.info('I am done with promise 1');
 	AppLogger.info(values);
 });
 </pre>
+	<li>If want to wait for multiple promises to be successfully fulfilled we call .all. It gets array of promises. Values passed to callback are values from each promise retrospectively they are mentioned in .all</li>
 <pre>
 Promise.all([promise2, promise1])
 		.then(function(values) {
@@ -48,6 +57,7 @@ Promise.all([promise2, promise1])
 			AppLogger.info(values);
 		});
 </pre>
+<li>If we want to wait just for one of the promises to be fulfilled/rejected we call .race. Values passed to callback are values returned from first fulfilled/rejected promise. </li>
 <pre>
 Promise.race([promise2, promise1])
 		.then(function(values) {
@@ -64,17 +74,19 @@ Promise.race([promise2, promise1, promise3])
 			AppLogger.info('Race finished');
 			AppLogger.info(values);
 		}, function(values) {
-			AppLogger.info('Race failed');
+			AppLogger.info('Race failed because of 3rd promise');
 			AppLogger.info(values);
 		});
 </pre>
+<li>When calling .all all of the promises must be resolved (none of them rejected!)</li>
 <pre>
 Promise.all([promise2, promise1, promise3])
 		.then(function(values) {
-			AppLogger.info('Finished everything!!!');
+			AppLogger.info('Finished everything with 3 promises!!!');
 			AppLogger.info(values);
 		}, function(values) {
-			AppLogger.info('SOmething failed');
+			AppLogger.info('Something failed with 3 promises');
 			AppLogger.info(values)
 		});
 </pre>
+</ul>
