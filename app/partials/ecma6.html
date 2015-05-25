@@ -16,13 +16,12 @@
 	        <li class='header'><a>Classes</a></li>
 	        <li><a ui-sref="ecma6.classes-babel">Babel</a></li>
 	        <li class='header'><a>Modules</a></li>
-	        <li><a ui-sref="ecma6.modules-babel">Babel</a></li>
+	        <li><a ui-sref="ecma6.modules-babel">Babel <i>(only in Firefox)</i></a></li>
 	        <li class='header'><a>Default Parameters</a></li>
 	        <li><a ui-sref="ecma6.default-parameters-babel">Babel</a></li>
 	        <li class='header'><a>Rest Parameters</a></li>
 	        <li><a ui-sref="ecma6.rest-parameters-babel">Babel</a></li>
 	        <li class='header'><a>Generators</a></li>
-	        <!-- <li><a ui-sref="ecma6.generators">Native (not working well??)</a></li> -->
 	        <li><a ui-sref="ecma6.generators-babel">Babel</a></li>
 	        <li class='header'><a>Promises</a></li>
 	        <li><a ui-sref="ecma6.promises">Native</a></li>
@@ -37,5 +36,21 @@
 	      </ul>
 	    </nav>
 	</aside>
-	<div ui-view class='ecma6-content'></div>
+	<div ui-view class='ecma6-content'>
+		<h3>What you will find here?</h3>
+		<ul class='ecma6-intro'>
+			<li><a ui-sref="ecma6.templatestrings">Template Strings</a> give us new way of interpolation of strings</li>
+			<li><a ui-sref="ecma6.let">Let</a> keyword is a new 'var' (blocked scoped var)</li>
+			<li><a ui-sref="ecma6.arrowfunction-babel">Arrow functions</a> allow us functions without parenthesis and different way of binding 'this'</li>
+			<li><a ui-sref="ecma6.classes-babel">Classes</a> are new way of inheritance in JavaScript</li>
+			<li><a ui-sref="ecma6.modules-babel">Modules <i>(only in Firefox)</i></a> will allow simple import/export of JavaScript module (replacement for AMD and CommonJS modules)</li>
+			<li><a ui-sref="ecma6.default-parameters-babel">Default parameters</a> allow us to assign some default values to parameters that are passed into functions</li>
+			<li><a ui-sref="ecma6.rest-parameters-babel">Rest parameters</a> will allow us to use optional number of parameters when defining functions</li>
+			<li><a ui-sref="ecma6.generators-babel">Generators</a> are new way for iterating through data</li>
+			<li><a ui-sref="ecma6.promises">Promises</a> give use built-in way for async programming</li>
+			<li><a ui-sref="ecma6.map-babel">Maps</a> will replace usage of Objects as map objects (anything can be key now)</li>
+			<li><a ui-sref="ecma6.set">Sets</a> are classic Set object (they are now part of JavaScript)</li>
+			<li><a ui-sref="ecma6.const">Const</a> keyword will allow us to define constants inside our program</li>
+		</ul>
+	</div>
 </div>

@@ -1,5 +1,6 @@
 body {
   background-color: #FFFFFF;
+  font-size: 14px;
 }
 header {
   background-color: #000000;
@@ -37,6 +38,9 @@ main {
 .focused {
   border: 1px solid red;
 }
+.justify-text {
+  text-align: justify;
+}
 .app-logger-title-holder {
   display: inline-block;
 }
@@ -49,34 +53,46 @@ main {
   margin-left: 14px;
   cursor: pointer;
 }
-.ecma6-view .ecma6-content {
-  width: 83%;
-  display: inline;
-  float: left;
-  margin-left: 2%;
+@media screen and (min-width: 960px) {
+  .ecma6-view .ecma6-content {
+    width: 83%;
+    display: inline;
+    float: left;
+    margin-left: 2%;
+  }
+  .ecma6-view .ecma6-content a {
+    cursor: pointer;
+  }
+  .ecma6-view .ecma6-intro li {
+    display: block;
+    font-size: 1.2em;
+    line-height: 2.5em;
+  }
+  .ecma6-view .ecma6-sidebar {
+    width: 15%;
+    display: inline;
+    float: left;
+  }
+  .ecma6-view .ecma6-sidebar ul {
+    list-style: none;
+  }
+  .ecma6-view .ecma6-sidebar ul li.header a {
+    font-size: 1.5em;
+    cursor: default;
+  }
+  .ecma6-view .ecma6-sidebar ul li.header a:hover {
+    text-decoration: none;
+    color: #428bca;
+  }
+  .ecma6-view .ecma6-sidebar ul li a {
+    font-size: 1.1em;
+  }
+  .ecma6-view .ecma6-sidebar ul li a:hover {
+    text-decoration: none;
+  }
 }
-.ecma6-view .ecma6-content a {
-  cursor: pointer;
-}
-.ecma6-view .ecma6-sidebar {
-  width: 15%;
-  display: inline;
-  float: left;
-}
-.ecma6-view .ecma6-sidebar ul {
-  list-style: none;
-}
-.ecma6-view .ecma6-sidebar ul li.header a {
-  font-size: 1.5em;
-  cursor: default;
-}
-.ecma6-view .ecma6-sidebar ul li.header a:hover {
-  text-decoration: none;
-  color: #428bca;
-}
-.ecma6-view .ecma6-sidebar ul li a {
-  font-size: 1.1em;
-}
-.ecma6-view .ecma6-sidebar ul li a:hover {
-  text-decoration: none;
+@media (max-width: 960px) {
+  .ecma6-view .ecma6-sidebar {
+    display: none;
+  }
 }
