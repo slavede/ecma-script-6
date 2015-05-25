@@ -79,7 +79,11 @@ main {
     float: left;
   }
   .ecma6-view .ecma6-sidebar ul {
+    padding: 0;
     list-style: none;
+  }
+  .ecma6-view .ecma6-sidebar ul li:not(.header) {
+    margin-left: 20px;
   }
   .ecma6-view .ecma6-sidebar ul li.header a {
     text-decoration: none;

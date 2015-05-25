@@ -21,8 +21,12 @@
 			display: inline;
 			float: left;
 			ul {
+				padding: 0;
 				list-style: none;
 				li {
+					&:not(.header) {
+						margin-left:20px;
+					}
 					&.header {
 						a {
 							text-decoration: none;
