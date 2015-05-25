@@ -109,7 +109,7 @@ angular
 	})
 	.run(function($rootScope, AppLogger) {
 		$rootScope.appLogger = AppLogger;
-		$rootScope.$on('$stateChangeStart', function(event, next, current) {
+		$rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
 			$rootScope.appLogger.clear();
 		});
 	});

@@ -53,6 +53,11 @@ main {
   margin-left: 14px;
   cursor: pointer;
 }
+.active-ui-sref {
+  color: #2a1ee0;
+  font-size: 1.3em;
+  font-weight: 600;
+}
 @media screen and (min-width: 960px) {
   .ecma6-view .ecma6-content {
     width: 83%;
@@ -77,6 +82,7 @@ main {
     list-style: none;
   }
   .ecma6-view .ecma6-sidebar ul li.header a {
+    text-decoration: none;
     font-size: 1.5em;
     cursor: default;
   }
@@ -85,6 +91,7 @@ main {
     color: #428bca;
   }
   .ecma6-view .ecma6-sidebar ul li a {
+    text-decoration: none;
     font-size: 1.1em;
   }
   .ecma6-view .ecma6-sidebar ul li a:hover {
