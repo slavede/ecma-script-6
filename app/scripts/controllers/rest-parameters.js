@@ -4,8 +4,8 @@ angular.module('EcmaScript6').controller('restParameters', ['$scope', 'AppLogger
 			start += val;
 		});
 		return start;
-	}
+	};
 
-	AppLogger.info(sum(1,5,7,9,10));
-	AppLogger.info(sum(3));
+	AppLogger.info(sum(1,5,7,9,10), 'rest-parameters-1');
+	AppLogger.info(sum(3), 'rest-parameters-2');
 }]);

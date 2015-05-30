@@ -1,9 +1,11 @@
-<h3>Modules - Babel</h3>
+<h3>Modules</h3>
+<i>Converted with BabelJS</i>
 <ng-include src="'app/partials/ecma6/modules-base.html'"></ng-include>
 <a ng-init="hidden=true" ng-show="hidden === true" ng-click="hidden = false">Show Babel</a>
 <a ng-show="hidden === false" ng-click="hidden = true">Hide Babel</a>
 <div ng-show="hidden===false">
 	<p>Need separate babel conversion</p>
+	<p>Here's not goal to learn about Babel so we won't go into details here</p>
 	<pre>
 babel --modules amd --module-id id_to_generate js_to_convert
 </pre>
@@ -22,42 +24,46 @@ define("sum", ["exports", "module"], function (exports, module) {
 	<p>mylogger.js</p>
 	<pre>
 define('mylogger', ['exports'], function (exports) {
-	'use strict';
+    'use strict';
 
-	Object.defineProperty(exports, '__esModule', {
-		value: true
-	});
-	exports.loggerInterceptor = loggerInterceptor;
+    Object.defineProperty(exports, '__esModule', {
+            value: true
+    });
+    exports.loggerInterceptor = loggerInterceptor;
 
-	function loggerInterceptor(logger, message) {
-		logger.info('loggerInterceptor --- ' + message);
-	}
+    function loggerInterceptor(logger, message, messageClass) {
+            logger.info('loggerInterceptor --- ' + message, messageClass);
+    }
 
-	;
-
-	var variablePi = '3.141593';
-	exports.variablePi = variablePi;
+    var variablePi = '3.141593';
+    exports.variablePi = variablePi;
 });
 	</pre>
 	<p>importer.js</p>
 	<pre>
-define('importer', ['exports', 'mylogger'], function (exports, _mylogger) {
-	'use strict';
+define('importer', ['exports', 'mylogger', 'sum'], function (exports, _mylogger, _sum) {
+        'use strict';
 
-	Object.defineProperty(exports, '__esModule', {
-		value: true
-	});
-	exports.exporter = exporter;
+        var _interopRequire = function (obj) { return obj && obj.__esModule ? obj['default'] : obj; };
 
-	console.log(_mylogger.variablePi);
-	console.log(_mylogger.loggerInterceptor(console, 'importer call'));
+        Object.defineProperty(exports, '__esModule', {
+                value: true
+        });
+        exports.exporter = exporter;
 
-	function exporter() {
-		return {
-			pi: _mylogger.variablePi,
-			loggerInterceptor: _mylogger.loggerInterceptor
-		};
-	}
+        var _sumCalculation = _interopRequire(_sum);
+
+        console.log(_mylogger.variablePi);
+        _mylogger.loggerInterceptor(console, 'Angular Controller');
+        console.log(_sumCalculation(1, 2, 3));
+
+        function exporter() {
+                return {
+                        pi: _mylogger.variablePi,
+                        loggerInterceptor: _mylogger.loggerInterceptor,
+                        sumCalculation: _sumCalculation
+                };
+        }
 });
 	</pre>
 </div>

@@ -16,24 +16,24 @@ function Lion(name) {
 
 	this.roarAfter = function (miliseconds) {
 		$timeout(function() {
-			AppLogger.info("Roar " + this);
+			<span class="message-class-arrowfunction-1">AppLogger.info("Roar " + this);</span>
 		}, miliseconds);
 	};
 
 	this.roarArrow = function(miliseconds) {
 		// no parameters => parenthesis required
 		$timeout(() => {
-			AppLogger.info("Arrow roar " + this.name);
+			<span class="message-class-arrowfunction-2">AppLogger.info("Arrow roar " + this.name);</span>
 		}, miliseconds)
 	};
 
 	this.showHeights = function() {
 		// one parameter => not parenthesis
 		$(this.heightThroughYears).map(index => {
-			AppLogger.info(this.heightThroughYears[index]);
+			<span class="message-class-arrowfunction-3">AppLogger.info(this.heightThroughYears[index]);</span>
 		});
 		$(this.heightThroughYears).map(function(index) {
-			AppLogger.info(this);
+			<span class="message-class-arrowfunction-4">AppLogger.info(this);</span>
 		});
 	}
 }
@@ -43,6 +43,6 @@ lion = new Lion("Slavko");
 lion.roarAfter(1500);
 lion.roarArrow(2500);
 
-AppLogger.info('Showing heights');
+<span class="message-class-arrowfunction-5">AppLogger.info('Showing heights');</span>
 lion.showHeights();
 </pre>

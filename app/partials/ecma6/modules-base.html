@@ -8,7 +8,7 @@
 <p>mylogger.js</p>
 <pre>
 export function loggerInterceptor(logger, message) {
-	logger.info('loggerInterceptor --- ' + message);
+	<span class='message-class-modules-2'>logger.info('loggerInterceptor --- ' + message);</span>
 };
 
 export var variablePi = '3.141593';
@@ -24,7 +24,7 @@ export default function (a, b, c) {
 import {variablePi,loggerInterceptor} from 'mylogger';
 import sumCalculation from 'sum';
 
-AppLogger.info(variablePi);
-loggerInterceptor(AppLogger, 'importer call')
-AppLogger.info(sumCalculation(1,2,3));
+<span class='message-class-modules-1'>AppLogger.info(variablePi);</span>
+loggerInterceptor(AppLogger, 'Angular Controller')
+<span class='message-class-modules-3'>AppLogger.info(sumCalculation(1,2,3));</span>
 </pre>

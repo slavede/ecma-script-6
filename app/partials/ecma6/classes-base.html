@@ -56,26 +56,28 @@ class Bicycle extends Vehicle{
 </ul>
 
 <pre>
-AppLogger.info(Vehicle.prototype.makeASound !== undefined);
-AppLogger.info(Vehicle.prototype["string keyed method"] !== undefined);
-AppLogger.info(Vehicle.prototype.minimumWheels === undefined);
+<span class="message-class-classes-1">AppLogger.info(Vehicle.prototype.makeASound !== undefined);</span>
+<span class="message-class-classes-2">AppLogger.info(Vehicle.prototype["string keyed method"] !== undefined);</span>
+<span class="message-class-classes-3">AppLogger.info(Vehicle.prototype.minimumWheels === undefined);</span>
 
-AppLogger.info(Vehicle.minimumWheels !== undefined);
+<span class="message-class-classes-4">AppLogger.info(Vehicle.minimumWheels !== undefined);</span>
 
 var vehicle = new Vehicle('red');
 
-AppLogger.info(vehicle.color);
-AppLogger.info(vehicle.vehicleColor);
+<span class="message-class-classes-5">AppLogger.info(vehicle.color);</span>
+<span class="message-class-classes-6">AppLogger.info(vehicle.vehicleColor);</span>
 vehicle.color = 'blue';
-AppLogger.info(vehicle.color);
-AppLogger.info(vehicle.vehicleColor);
+<span class="message-class-classes-7">AppLogger.info(vehicle.color);</span>
+<span class="message-class-classes-8">AppLogger.info(vehicle.vehicleColor);</span>
+<span class="message-class-classes-9">AppLogger.info(vehicle.makeASound());</span>
 
-AppLogger.info(vehicle["string keyed method"]());
+<span class="message-class-classes-10">AppLogger.info(vehicle["string keyed method"]());</span>
 
 var bicycle = new Bicycle('black');
-AppLogger.info(bicycle.wheels);
-AppLogger.info(bicycle.color);
+<span class="message-class-classes-11">AppLogger.info(bicycle.wheels);</span>
+<span class="message-class-classes-12">AppLogger.info(bicycle.color);</span>
 
 bicycle.color = 'pink';
-AppLogger.info(bicycle.color);
+<span class="message-class-classes-13">AppLogger.info(bicycle.color);</span>
+<span class="message-class-classes-14">AppLogger.info(bicycle.makeASound(), 'classes-14');</span>
 </pre>

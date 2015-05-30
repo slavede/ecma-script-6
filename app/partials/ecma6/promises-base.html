@@ -21,7 +21,7 @@ var promise1 = new Promise(function(resolve1, reject1) {
 		}
 		counter++;
 	}, 500);
-	AppLogger.info('Started inteval in promise 1');
+	<span class="message-class-promises-1">AppLogger.info('Started inteval in promise 1');</span>
 }), promise2 = new Promise(function(resolve2, reject2) {
 	// something async here
 	$timeout(function() {
@@ -30,7 +30,7 @@ var promise1 = new Promise(function(resolve1, reject1) {
 			value : Date.now()
 		});
 	}, 1000);
-	AppLogger.info('Started timeout in promise 2');
+	<span class="message-class-promises-2">AppLogger.info('Started timeout in promise 2');</span>
 }), promise3 = new Promise(function(resolve3, reject3) {
 	// something async here
 	$timeout(function() {
@@ -39,54 +39,54 @@ var promise1 = new Promise(function(resolve1, reject1) {
 			value : Date.now()
 		});
 	}, 100);
-	AppLogger.info('Started timeout in promise 3');
+	<span class="message-class-promises-3">AppLogger.info('Started timeout in promise 3');</span>
 });
 </pre>
 	<li>When promise is successfully fulfilled, function that was passed in .then is called with parameters given from called resolve function</li>
 <pre>
 promise1.then(function(values) {
-	AppLogger.info('I am done with promise 1');
-	AppLogger.info(values);
+	<span class="message-class-promises-4">AppLogger.info('I am done with promise 1');</span>
+	<span class="message-class-promises-5">AppLogger.info(values);</span>
 });
 </pre>
 	<li>If want to wait for multiple promises to be successfully fulfilled we call .all. It gets array of promises. Values passed to callback are values from each promise retrospectively they are mentioned in .all</li>
 <pre>
 Promise.all([promise2, promise1])
 		.then(function(values) {
-			AppLogger.info('Finished everything!!!');
-			AppLogger.info(values);
+			<span class="message-class-promises-6">AppLogger.info('Finished everything!!!');</span>
+			<span class="message-class-promises-7">AppLogger.info(values);</span>
 		});
 </pre>
 <li>If we want to wait just for one of the promises to be fulfilled/rejected we call .race. Values passed to callback are values returned from first fulfilled/rejected promise. </li>
 <pre>
 Promise.race([promise2, promise1])
 		.then(function(values) {
-			AppLogger.info('Race finished');
-			AppLogger.info(values);
+			<span class="message-class-promises-8">AppLogger.info('Race finished');</span>
+			<span class="message-class-promises-9">AppLogger.info(values);</span>
 		}, function(values) {
-			AppLogger.info('Race failed');
-			AppLogger.info(values);
+			<span class="message-class-promises-10">AppLogger.info('Race failed');</span>
+			<span class="message-class-promises-11">AppLogger.info(values);</span>
 		});
 </pre>
 <pre>
 Promise.race([promise2, promise1, promise3])
 		.then(function(values) {
-			AppLogger.info('Race finished');
-			AppLogger.info(values);
+			<span class="message-class-promises-12">AppLogger.info('Race finished');</span>
+			<span class="message-class-promises-13">AppLogger.info(values);</span>
 		}, function(values) {
-			AppLogger.info('Race failed because of 3rd promise');
-			AppLogger.info(values);
+			<span class="message-class-promises-14">AppLogger.info('Race failed because of 3rd promise');</span>
+			<span class="message-class-promises-15">AppLogger.info(values);</span>
 		});
 </pre>
 <li>When calling .all all of the promises must be resolved (none of them rejected!)</li>
 <pre>
 Promise.all([promise2, promise1, promise3])
 		.then(function(values) {
-			AppLogger.info('Finished everything with 3 promises!!!');
-			AppLogger.info(values);
+			<span class="message-class-promises-16">AppLogger.info('Finished everything with 3 promises!!!');</span>
+			<span class="message-class-promises-17">AppLogger.info(values);</span>
 		}, function(values) {
-			AppLogger.info('Something failed with 3 promises');
-			AppLogger.info(values)
+			<span class="message-class-promises-18">AppLogger.info('Something failed with 3 promises');</span>
+			<span class="message-class-promises-19">AppLogger.info(values)</span>
 		});
 </pre>
 </ul>

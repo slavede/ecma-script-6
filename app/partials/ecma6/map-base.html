@@ -22,57 +22,65 @@ myMap = new Map([
 </pre>
 <li>.get(key) method returns value for the key, or undefined if it doesn't exist</li>
 <pre>
-AppLogger.info(myMap.get(object1));
-AppLogger.info(myMap.get('myKey1'));
-AppLogger.info(myMap.get(object3));
-AppLogger.info(myMap.get(myMap.get('myKey1')));
+<span class="message-class-map-1">AppLogger.info('--- get ---');</span>
+<span class="message-class-map-2">AppLogger.info(myMap.get(object1));</span>
+<span class="message-class-map-3">AppLogger.info(myMap.get('myKey1'));</span>
+<span class="message-class-map-4">AppLogger.info(myMap.get(object3));</span>
+<span class="message-class-map-5">AppLogger.info(myMap.get(myMap.get('myKey1')));</span>
 </pre>
 <li>.delete(key) method deletes object with given key and returns true/false based if key existed or not</li>
 <pre>
-AppLogger.info(myMap.get(object1));
+<span class="message-class-map-6">AppLogger.info('--- delete ---');</span>
+<span class="message-class-map-7">AppLogger.info(myMap.get(object1));</span>
 myMap.delete(object1);
-AppLogger.info(myMap.get(object1));
+<span class="message-class-map-8">AppLogger.info(myMap.get(object1));</span>
 </pre>
 <li>.entries() returns iterator for iterating map. Each .next() call returns object with key-value pair (see <a href="#/ecma6/generators-babel#iterators">Generators</a> for more details how iterators work).</li>
 <pre>
-var iterator = myMap.entries();
-AppLogger.info(iterator.next());
-AppLogger.info(iterator.next());
-AppLogger.info(iterator.next());
+<span class="message-class-map-9">AppLogger.info('--- entries ---');
+var iterator = myMap.entries();</span>
+<span class="message-class-map-10">AppLogger.info(iterator.next());</span>
+<span class="message-class-map-11">AppLogger.info(iterator.next());</span>
+<span class="message-class-map-12">AppLogger.info(iterator.next());</span>
 </pre>
 <li>.forEach() returns iterator which contains an array of key-value pair for each element</li>
 <pre>
+<span class="message-class-map-13">AppLogger.info('--- forEach ---');</span>
 myMap.forEach(function(val) {
-	AppLogger.info(val);
+	<span class="message-class-map-14">AppLogger.info(val);</span>
 });
 </pre>
 <li>.has(key) returns true/false if object has (or hasn't key). .set(key, value) sets value under specified key</li>
 <pre>
-AppLogger.info(myMap.has(object3));
+<span class="message-class-map-15">AppLogger.info('--- set/has ---');</span>
+<span class="message-class-map-16">AppLogger.info(myMap.has(object3));</span>
 myMap.set(object3, 'setObject');
-AppLogger.info(myMap.has(object3));
+<span class="message-class-map-17">AppLogger.info(myMap.has(object3));</span>
 </pre>
 <li>.keys() returns iterator over the keys.</li>
 <pre>
+<span class="message-class-map-18">AppLogger.info('--- keys ---');</span>
 var keysIterator = myMap.keys();
-AppLogger.info(keysIterator.next());
-AppLogger.info(keysIterator.next());
-AppLogger.info(keysIterator.next());
+<span class="message-class-map-19">AppLogger.info(keysIterator.next());</span>
+<span class="message-class-map-20">AppLogger.info(keysIterator.next());</span>
+<span class="message-class-map-21">AppLogger.info(keysIterator.next());</span>
 </pre>
 <li>.values() returns iterator over the values</li>
 <pre>
+<span class="message-class-map-22">AppLogger.info('--- values ---');</span>
 var valuesIterator = myMap.values();
-AppLogger.info(valuesIterator.next());
-AppLogger.info(valuesIterator.next());
-AppLogger.info(valuesIterator.next());
+<span class="message-class-map-23">AppLogger.info(valuesIterator.next());</span>
+<span class="message-class-map-24">AppLogger.info(valuesIterator.next());</span>
+<span class="message-class-map-25">AppLogger.info(valuesIterator.next());</span>
 </pre>
 <li>Map object has default iterator which can be used in for..of iterator. It iterates over key-value pairs (see <a href="#/ecma6/generators-babel#for-of-generators">Generators-for..of</a> for more details about default iterators)</li>
 <pre>
+<span class="message-class-map-26">AppLogger.info('--- for..of ---');</span>
 for (var [key, val] of myMap) {
-	AppLogger.info('key');
-	AppLogger.info(key);
-	AppLogger.info('val');
-	AppLogger.info(val);
+	<span class="message-class-map-27">AppLogger.info('key');</span>
+	<span class="message-class-map-28">AppLogger.info(key);</span>
+	<span class="message-class-map-29">AppLogger.info('val');</span>
+	<span class="message-class-map-30">AppLogger.info(val);</span>
 }
 </pre>
 </ul>

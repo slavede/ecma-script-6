@@ -18,58 +18,68 @@ mySet = new Set([object1, 'StringObject', 2, object2, object1]);
 </pre>
 <li>.size property which hold size of set</li>
 <pre>
-AppLogger.info(mySet.size);
+<span class="message-class-set-1">AppLogger.info('--- size ---');
+<span class="message-class-set-2">AppLogger.info(mySet.size);
 </pre>
 <li>.has(key) returns true/false if object exists</li>
 <pre>
-AppLogger.info(mySet.has(object1));
-AppLogger.info(mySet.has('myKey1'));
-AppLogger.info(mySet.has(object3));
+<span class="message-class-set-3">AppLogger.info('--- has ---');
+<span class="message-class-set-4">AppLogger.info(mySet.has(object1));
+<span class="message-class-set-5">AppLogger.info(mySet.has('myKey1'));
+<span class="message-class-set-6">AppLogger.info(mySet.has(object3));
+<span class="message-class-set-7">AppLogger.info(mySet.has(2), 'set-7');</span>
 </pre>
 <li>.delete(key) method deletes object and returns true/false based if object existed or not</li>
 <pre>
-AppLogger.info(mySet.get(object1));
+<span class="message-class-set-8">AppLogger.info('--- delete ---');
+<span class="message-class-set-9">AppLogger.info(mySet.get(object1));
 mySet.delete(object1);
-AppLogger.info(mySet.get(object1));
+<span class="message-class-set-10">AppLogger.info(mySet.get(object1));
 </pre>
 <li>.entries() returns iterator for iterating objects (see <a href="#/ecma6/generators-babel#iterators">Generators</a> for more details how iterators work).</li>
 <pre>
+<span class="message-class-set-11">AppLogger.info('--- entries ---');
 var iterator = mySet.entries();
-AppLogger.info(iterator.next());
-AppLogger.info(iterator.next());
-AppLogger.info(iterator.next());
+<span class="message-class-set-12">AppLogger.info(iterator.next());
+<span class="message-class-set-13">AppLogger.info(iterator.next());
+<span class="message-class-set-14">AppLogger.info(iterator.next());
 </pre>
 <li>.forEach() returns iterator over values in set</li>
 <pre>
+<span class="message-class-set-15">AppLogger.info('--- forEach ---');
 mySet.forEach(function(val) {
-	AppLogger.info(val);
+	<span class="message-class-set-16">AppLogger.info(val);
 });
 </pre>
 <li>.add(object) adds object to Set. Returns Set object back<li>
 <pre>
-AppLogger.info(mySet.has(object3));
+<span class="message-class-set-17">AppLogger.info('--- add ---');
+<span class="message-class-set-18">AppLogger.info(mySet.has(object3));
 mySet.add(object3);
-AppLogger.info(mySet.has(object3));
+<span class="message-class-set-19">AppLogger.info(mySet.has(object3));
 </pre>
 <h5>.keys() returns iterator over values (same as .values)</h5>
 <pre>
+<span class="message-class-set-20">AppLogger.info('--- keys ---');
 var keysIterator = mySet.keys();
-AppLogger.info(keysIterator.next());
-AppLogger.info(keysIterator.next());
-AppLogger.info(keysIterator.next());
+<span class="message-class-set-21">AppLogger.info(keysIterator.next());
+<span class="message-class-set-22">AppLogger.info(keysIterator.next());
+<span class="message-class-set-23">AppLogger.info(keysIterator.next());
 </pre>
 <h5>.values() returns iterator over values (same as keys)</h5>
 <pre>
+<span class="message-class-set-24">AppLogger.info('--- values ---');
 var valuesIterator = mySet.values();
-AppLogger.info(valuesIterator.next());
-AppLogger.info(valuesIterator.next());
-AppLogger.info(valuesIterator.next());
+<span class="message-class-set-25">AppLogger.info(valuesIterator.next());
+<span class="message-class-set-26">AppLogger.info(valuesIterator.next());
+<span class="message-class-set-27">AppLogger.info(valuesIterator.next());
 </pre>
 <h5>Set object has default iterator which is used in for..of iterator. It iterates through objects stored in Set (see <a href="#/ecma6/generators-babel#for-of-generators">Generators-for..of</a> for more details about default iterators)</h5>
 <pre>
+<span class="message-class-set-28">AppLogger.info('--- for..of ---');
 for (var val of mySet) {
-	AppLogger.info('val');
-	AppLogger.info(val);
+	<span class="message-class-set-29">AppLogger.info('val');
+	<span class="message-class-set-30">AppLogger.info(val);
 }
 </pre>
 </ul>

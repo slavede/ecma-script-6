@@ -82,7 +82,7 @@ angular.module("EcmaScript6").controller("generators-babel", ["$scope", "AppLogg
 
 	var myArray = [9, 8, 7];
 	for (var i in myArray) {
-		AppLogger.info(i);
+		AppLogger.info(i, "generators-1");
 	}
 
 	var _iteratorNormalCompletion = true;
@@ -93,7 +93,7 @@ angular.module("EcmaScript6").controller("generators-babel", ["$scope", "AppLogg
 		for (var _iterator = myArray[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
 			var i = _step.value;
 
-			AppLogger.info(i);
+			AppLogger.info(i, "generators-2");
 		}
 	} catch (err) {
 		_didIteratorError = true;
@@ -142,7 +142,7 @@ angular.module("EcmaScript6").controller("generators-babel", ["$scope", "AppLogg
 			var id = _step2$value[0];
 			var name = _step2$value[1];
 
-			AppLogger.info(id + " - " + name);
+			AppLogger.info(id + " - " + name, "generators-3");
 		}
 	} catch (err) {
 		_didIteratorError2 = true;
@@ -160,9 +160,9 @@ angular.module("EcmaScript6").controller("generators-babel", ["$scope", "AppLogg
 	}
 
 	var iterator = studentsIterator(students);
-	AppLogger.info(iterator.next());
-	AppLogger.info(iterator.next());
-	AppLogger.info(iterator.next());
-	AppLogger.info(iterator.next());
+	AppLogger.info(iterator.next(), "generators-4");
+	AppLogger.info(iterator.next(), "generators-5");
+	AppLogger.info(iterator.next(), "generators-6");
+	AppLogger.info(iterator.next(), "generators-7");
 }]);
 //# sourceMappingURL=generators-babel.js.map

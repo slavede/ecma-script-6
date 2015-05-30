@@ -16,11 +16,11 @@
 <pre>
 var myArray = [9, 8, 7];
 for (let i in myArray) {
-	AppLogger.info(i);
+	<span class="message-class-generators-1">AppLogger.info(i);</span>
 }
 
 for (let i of myArray) {
-	AppLogger.info(i);
+	<span class="message-class-generators-2">AppLogger.info(i);</span>
 }
 </pre>
 </div>
@@ -53,20 +53,20 @@ var students = [
 function* studentsIterator(students) {
 	for (var student of students) {
 		if (student.id % 2 === 0) {
-			yield [student.id, student.privateData.name]	
+			yield [student.id, student.privateData.name];
 		}
 	}
 }
 
 for (var [id, name] of studentsIterator(students)) {
-	AppLogger.info(id + ' - ' + name);
+	<span class="message-class-generators-3">AppLogger.info(id + ' - ' + name);</span>
 }
 </pre>
 <h4>Using your generator</h4>
 <pre>
 var iterator = studentsIterator(students);
-AppLogger.info(iterator.next());
-AppLogger.info(iterator.next());
-AppLogger.info(iterator.next());
-AppLogger.info(iterator.next());
+<span class="message-class-generators-4">AppLogger.info(iterator.next());</span>
+<span class="message-class-generators-5">AppLogger.info(iterator.next());</span>
+<span class="message-class-generators-6">AppLogger.info(iterator.next());</span>
+<span class="message-class-generators-7">AppLogger.info(iterator.next());</span>
 </pre>

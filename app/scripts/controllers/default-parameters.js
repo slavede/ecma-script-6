@@ -6,8 +6,8 @@ angular.module('EcmaScript6').controller('defaultParameters', ['$scope', 'AppLog
 		return firstLetter.toUpperCase() === firstLetter;
 	};
 
-	AppLogger.info(isFirstCapital('Slaven'));
-	AppLogger.info(isFirstCapital('slaven'));
-	AppLogger.info(isFirstCapital('slaven', 'S'));
+	AppLogger.info(isFirstCapital('Slaven'), 'default-parameters-1');
+	AppLogger.info(isFirstCapital('slaven'), 'default-parameters-2');
+	AppLogger.info(isFirstCapital('slaven', 'S'), 'default-parameters-3');
 
 }]);

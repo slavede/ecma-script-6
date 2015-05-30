@@ -60,6 +60,7 @@ main {
 }
 .focused-message-class {
   border: 1px solid red;
+  cursor: pointer;
 }
 @media screen and (min-width: 960px) {
   .ecma6-view .ecma6-content {
@@ -70,6 +71,10 @@ main {
   }
   .ecma6-view .ecma6-content a {
     cursor: pointer;
+  }
+  .ecma6-view .ecma6-content h3 {
+    display: inline-block;
+    margin-bottom: 25px;
   }
   .ecma6-view .ecma6-intro li {
     display: block;
@@ -85,23 +90,15 @@ main {
     padding: 0;
     list-style: none;
   }
-  .ecma6-view .ecma6-sidebar ul li:not(.header) {
-    margin-left: 20px;
+  .ecma6-view .ecma6-sidebar ul li.header {
+    margin-bottom: 15px;
   }
   .ecma6-view .ecma6-sidebar ul li.header a {
     text-decoration: none;
     font-size: 1.5em;
-    cursor: default;
   }
   .ecma6-view .ecma6-sidebar ul li.header a:hover {
     text-decoration: none;
     color: #428bca;
-  }
-  .ecma6-view .ecma6-sidebar ul li a {
-    text-decoration: none;
-    font-size: 1.1em;
-  }
-  .ecma6-view .ecma6-sidebar ul li a:hover {
-    text-decoration: none;
   }
 }

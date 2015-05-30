@@ -38,7 +38,7 @@
       <div class="log-output ng-hide" message-class-marker ng-show="appLogger.logs.info.length > 0">
         <div class="app-logger-title-holder">
           <h3>AppLogger</h3>
-          <span class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="bottom" title="AppLogger is wrapper around the console. Does the same."></span>
+          <span class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="bottom" title="AppLogger is wrapper around the console. Does the same. Hover over entries to match the entry in code"></span>
         </div>
         <pre ng-class="info.messageClass" ng-repeat="info in appLogger.logs.info track by $index">{{info.message}}</pre>
       </div>

@@ -5,11 +5,11 @@ angular.module('EcmaScript6').controller('generators', ['$scope', 'AppLogger', '
 	
 	var myArray = [9, 8, 7];
 	for (let i in myArray) {
-		AppLogger.info(i);
+		AppLogger.info(i, 'generators-1');
 	}
 
 	for (let i of myArray) {
-		AppLogger.info(i);
+		AppLogger.info(i, 'generators-2');
 	}
 
 	var students = [
@@ -39,20 +39,20 @@ angular.module('EcmaScript6').controller('generators', ['$scope', 'AppLogger', '
 	function* studentsIterator(students) {
 		for (var student of students) {
 			if (student.id % 2 === 0) {
-				yield [student.id, student.privateData.name]	
+				yield [student.id, student.privateData.name];	
 			}
 		}
 	}
 
 	for (var [id, name] of studentsIterator(students)) {
-		AppLogger.info(id + ' - ' + name);
+		AppLogger.info(id + ' - ' + name, 'generators-3');
 	}
 
 
 
 	var iterator = studentsIterator(students);
-	AppLogger.info(iterator.next());
-	AppLogger.info(iterator.next());
-	AppLogger.info(iterator.next());
-	AppLogger.info(iterator.next());
+	AppLogger.info(iterator.next(), 'generators-4');
+	AppLogger.info(iterator.next(), 'generators-5');
+	AppLogger.info(iterator.next(), 'generators-6');
+	AppLogger.info(iterator.next(), 'generators-7');
 }]);

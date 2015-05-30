@@ -15,15 +15,15 @@ const myConstant = 123;
 
 if (myConstant === 123) {
 	const myInnerConstant = 444;
-	AppLogger.info('In the block: ' + myInnerConstant);
+	<span class="message-class-const1">AppLogger.info('In the block: ' + myInnerConstant);</span>
 }
 
-AppLogger.info('Outside the block: ' + myInnerConstant);
+<span class="message-class-const2">AppLogger.info('Outside the block: ' + myInnerConstant);</span>
 
 try {
 	myConstant = 666;
 } catch (e) {
-	AppLogger.info('Thrown exception because of trying to redefine it');
+	<span class="message-class-const3">AppLogger.info('Thrown exception because of trying to redefine it');</span>
 	console.log(e);
 }
 </pre>
