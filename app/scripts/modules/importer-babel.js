@@ -11,7 +11,7 @@ define('importer', ['exports', 'mylogger', 'sum'], function (exports, _mylogger,
         var _sumCalculation = _interopRequire(_sum);
 
         console.log(_mylogger.variablePi);
-        _mylogger.loggerInterceptor(console, 'importer call');
+        _mylogger.loggerInterceptor(console, 'Angular Controller');
         console.log(_sumCalculation(1, 2, 3));
 
         function exporter() {
