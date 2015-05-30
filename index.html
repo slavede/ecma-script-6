@@ -32,15 +32,15 @@
         </nav>
       </header>
 
-      <main ui-view>
+      <main ui-view message-class-marker>
       </main>
 
-      <div class="log-output ng-hide" ng-show="appLogger.logs.info.length > 0">
+      <div class="log-output ng-hide" message-class-marker ng-show="appLogger.logs.info.length > 0">
         <div class="app-logger-title-holder">
           <h3>AppLogger</h3>
           <span class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="bottom" title="AppLogger is wrapper around the console. Does the same."></span>
         </div>
-        <pre ng-repeat="info in appLogger.logs.info track by $index">{{info}}</pre>
+        <pre ng-class="info.messageClass" ng-repeat="info in appLogger.logs.info track by $index">{{info.message}}</pre>
       </div>
 
       <footer>
@@ -117,6 +117,7 @@
 
         <script src="app/scripts/factories/app-logger.js"></script>
         <script src="app/scripts/directives/menu-active-marker.js"></script>
+        <script src="app/scripts/directives/message-class-marker.js"></script>
         <!-- endbuild -->
 </body>
 </html>

@@ -4,7 +4,7 @@
 	<pre>
 var name = "Slaven", surname = "Tomac";
 
-AppLogger.info(`Hello there ${name} ${surname} !`);
+<span class='message-class-template-string-1'>AppLogger.info(`Hello there ${name} ${surname} !`);</span>
 	</pre>
 	<li>They can be multilined without any special sign for new line</li>
 	<pre>
@@ -14,12 +14,12 @@ var multilineString = `This is my multiline string ${name}
 						Ha?!
 						`;
 
-AppLogger.info(multilineString);
+<span class='message-class-template-string-2'>AppLogger.info(multilineString);</span>
 	</pre>
 	<li>It can to calculation inside {}</li>
 	<pre>
 var a = 1;
-AppLogger.info(`I can also calculate in string now : ${5 + a}`);
+<span class='message-class-template-string-3'>AppLogger.info(`I can also calculate in string now : ${5 + a}`);</span>
 	</pre>
 	<li>Tagged functions allow you to pass values to function instead of default concatenation
 		<ul>
@@ -33,6 +33,6 @@ function myTagger(strings, value1, value2) {
 	return 'raw: ' + strings.raw.join(',') + '\n strings: ' + strings.join(',') + '\n values: ' + value1 + ' - ' + value2 ;
 }
 
-AppLogger.info(myTagger`User ${name} will use\n my tagger here for ${a}st time`);
+<span class='message-class-template-string-4'>AppLogger.info(myTagger`User ${name} will use\n my tagger here for ${a}st time`);</span>
 	</pre>
 </ul>
