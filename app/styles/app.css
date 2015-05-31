@@ -92,6 +92,7 @@ main {
   }
   .ecma6-view .ecma6-sidebar ul li.header {
     margin-bottom: 15px;
+    word-wrap: break-word;
   }
   .ecma6-view .ecma6-sidebar ul li.header a {
     text-decoration: none;
@@ -103,6 +104,7 @@ main {
   }
   .ecma6-view .ecma6-sidebar ul li.sub-header {
     margin-left: 15px;
+    word-wrap: break-word;
   }
   .ecma6-view .ecma6-sidebar ul li.sub-header a {
     text-decoration: none;

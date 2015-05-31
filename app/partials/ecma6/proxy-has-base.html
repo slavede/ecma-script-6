@@ -1,0 +1,37 @@
+<ul>
+	<li>Trap for in operator
+		<ul>
+			<li>"a" in object</li>
+			<li>More details <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/in">here</a></li>
+		</ul>
+	</li>
+	<li>It gets two parameters
+		<ul>
+			<li>target - object in which we are checking if property exists</li>
+			<li>property - for which property we are checking if exists</li>
+		</ul>
+	</li>
+</ul>
+<pre>
+var myObject = {
+	name : 'myObject',
+	height : 180
+};
+
+// we are 'hiding' name
+var proxy = new Proxy(myObject, {
+	has : function(target, prop) {
+		<span class="message-class-proxy-has-1">AppLogger.info('Checking through proxy existence of ' + prop);</span>
+		if (prop === 'name') {
+			return false;
+		} else {
+			return (prop in target);
+		}
+	}
+});
+
+<span class="message-class-proxy-has-2">AppLogger.info('name' in proxy);</span>
+<span class="message-class-proxy-has-3">AppLogger.info('height' in proxy);</span>
+<span class="message-class-proxy-has-4">AppLogger.info(proxy.hasOwnProperty('name'));</span>
+<span class="message-class-proxy-has-5">AppLogger.info(proxy.hasOwnProperty('height'));</span>
+</pre>

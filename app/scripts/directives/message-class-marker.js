@@ -12,7 +12,6 @@ angular.module('EcmaScript6').directive('messageClassMarker', ['$rootScope', '$s
 						};
 
 						var classToMark = extractWordStartsWith(e.target.className, 'message-class');
-						console.log('Need to mark', classToMark);
 
 						$('.' + classToMark).addClass('focused-message-class');
 					});
