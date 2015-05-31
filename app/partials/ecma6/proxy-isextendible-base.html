@@ -1,0 +1,19 @@
+<ul>
+	<li>Trap for Object.isExtensible()</li>
+	<li>Object.isExtensible() determines if an object is extensible. By default all objects are. There are few ways of making it non extensible (Object.preventExtension(), Object.seal(), Object.freeze().</li>
+	<li>Proxy must return same extensibility as target object</li>
+</ul>
+</li>
+<pre>
+<span class="message-class-proxy-4">AppLogger.info('Object.isExtensible(myObject): ' + Object.isExtensible(myObject));</span>
+
+var extensibleProxy = new Proxy(myObject, {
+	isExtensible : function(target) {
+		<span class="message-class-proxy-5">AppLogger.info('I am being proxied through extensibleProxy' + target.name);</span>
+		return true;
+	}
+});
+
+<span class="message-class-proxy-6">AppLogger.info('Object.isExtensible(myObject): ' + Object.isExtensible(myObject));</span>
+<span class="message-class-proxy-7">AppLogger.info('Object.isExtensible(extensibleProxy): ' + Object.isExtensible(extensibleProxy));</span>
+</pre>

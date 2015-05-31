@@ -16,6 +16,22 @@
 	        <li class='header'><a ui-sref="ecma6.map-babel">Map</a></li>
 	        <li class='header'><a ui-sref="ecma6.set">Set</a></li>
 	        <li class='header'><a ui-sref="ecma6.const">Const</a></li>
+	        <li class='header'><a ui-sref="ecma6.proxy">Proxy <i>(only in Firefox)</i></a>
+		        <ul>
+		        	<li class='sub-header'>
+		        		<a ui-sref="ecma6.proxy-getprototypeof">.getPrototypeOf()</i></a>
+		        	</li>
+		        	<li class='sub-header'>
+		        		<a ui-sref="ecma6.proxy-setprototypeof">.setPrototypeOf()</i></a>
+		        	</li>
+		        	<li class='sub-header'>
+		        		<a ui-sref="ecma6.proxy-isextendible">.isExtendible()</i></a>
+		        	</li>
+		        	<li class='sub-header'>
+		        		<a ui-sref="ecma6.proxy-preventextensions">.preventExtensions()</i></a>
+		        	</li>
+				</ul>
+	        </li>
 	      </ul>
 	    </nav>
 	</aside>
@@ -34,6 +50,7 @@
 			<li><a ui-sref="ecma6.map-babel">Maps</a> will replace usage of Objects as map objects (anything can be key now)</li>
 			<li><a ui-sref="ecma6.set-babel">Sets</a> are classic Set object (they are now part of JavaScript)</li>
 			<li><a ui-sref="ecma6.const">Const</a> keyword will allow us to define constants inside our program</li>
+			<li><a ui-sref="ecma6.proxy">Proxy</a> allows us to define custom behavior for built-in operators such as property lookup, function invocation etc</li>
 		</ul>
 		<h3>What's AppLogger</h3>
 		<ul class='ecma6-intro'>

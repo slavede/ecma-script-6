@@ -101,4 +101,15 @@ main {
     text-decoration: none;
     color: #428bca;
   }
+  .ecma6-view .ecma6-sidebar ul li.sub-header {
+    margin-left: 15px;
+  }
+  .ecma6-view .ecma6-sidebar ul li.sub-header a {
+    text-decoration: none;
+    font-size: 1.1em;
+  }
+  .ecma6-view .ecma6-sidebar ul li.sub-header a:hover {
+    text-decoration: none;
+    color: #428bca;
+  }
 }

@@ -1,0 +1,44 @@
+<p>It allows to define custom behavior for built-in operators such as property lookup, function invocation etc.</p>
+<ul>
+	<li>Proxy constructor gets two parameters (new Proxy(target, handler))
+		<ul>
+			<li>target - what we are extending. It can be any object</li>
+			<li>handler - collection of function which we want to extend</li>
+		</ul>
+	</li>
+	<li>Method not defined in proxy is called from target object. Method defined in proxy is called from proxy</li>
+	<pre>
+var myObject = {
+	name : 'MyName',
+	distance : 0,
+	walk : function() {
+		this.distance++;
+		<span class="message-class-proxy-1">AppLogger.info('Walking, distance is ' + this.distance);</span>
+	},
+	run : function() {
+		this.distance += 2;
+		<span class="message-class-proxy-2">AppLogger.info('Running, distance is ' + this.distance);</span>
+	}
+};
+
+var proxy = new Proxy(myObject, {
+});	
+
+myObject.walk();
+
+proxy.walk = function() {
+	this.distance++;
+	<span class="message-class-proxy-3">AppLogger.info('Walking in proxy, distance is ' + this.distance);</span>
+};
+
+myObject.walk();
+myObject.run();
+	</pre>
+	<li>
+		Handler can extend many functions. It's methods are called traps for object which we are extending
+		<ul>
+			<li><b>handler.preventExtensions()</b>
+				
+		</ul>
+	</li>
+</ul>

@@ -1,0 +1,36 @@
+<ul>
+	<li>Trap for Object.preventExtensions()</li>
+	<li>Object.preventExtensions() prevents adding new properties to object (can be deleted though). You can still add properties to prototype.</li>
+	<li>Must return boolean</li>
+	<li>It can return true only if isExtensbile returns false!</li>
+</ul>
+<pre>
+var myObject2 = {
+	name : 'myObject2',
+	distance : 0,
+};
+
+myObject2.getDistance = function() {
+	return this.distance;
+};
+
+var preventExtensionsProxy = new Proxy(myObject2, {
+	preventExtensions : function(target) {
+		<span class="message-class-proxy-103">AppLogger.info('Prevent extensions in proxy!');</span>
+		// this will make Object.isExtensible(target) return false
+		Object.preventExtensions(target);
+		return true;
+	}
+});
+
+Object.preventExtensions(preventExtensionsProxy);
+
+
+myObject2.resetDistance = function() {
+	<span class="message-class-proxy-104">AppLogger.info('Reseting distance!');</span>
+	this.distance = 0;
+};
+
+<span class="message-class-proxy-105">AppLogger.info('Before preventing, method can be added: ' + (myObject2.getDistance !== undefined));</span>
+<span class="message-class-proxy-106">AppLogger.info('After preventing, method can not be added: ' + (myObject2.resetDistance === undefined))</span>;
+</pre>

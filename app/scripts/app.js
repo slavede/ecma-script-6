@@ -106,6 +106,31 @@ angular
 				templateUrl : 'app/partials/ecma6/const.html',
 				controller : 'const'
 			})
+			.state('ecma6.proxy', {
+				url : '/proxy',
+				templateUrl : 'app/partials/ecma6/proxy.html',
+				controller : 'proxy'
+			})
+			.state('ecma6.proxy-getprototypeof', {
+				url : '/proxy-getprototypeof',
+				templateUrl : 'app/partials/ecma6/proxy-getprototypeof.html',
+				controller : 'proxy-getprototypeof'
+			})
+			.state('ecma6.proxy-setprototypeof', {
+				url : '/proxy-setprototypeof',
+				templateUrl : 'app/partials/ecma6/proxy-setprototypeof.html',
+				controller : 'proxy-setprototypeof'
+			})
+			.state('ecma6.proxy-isextendible', {
+				url : '/proxy-isextendible',
+				templateUrl : 'app/partials/ecma6/proxy-isextendible.html',
+				controller : 'proxy-isextendible'
+			})
+			.state('ecma6.proxy-preventextensions', {
+				url : '/proxy-preventextensions',
+				templateUrl : 'app/partials/ecma6/proxy-preventextensions.html',
+				controller : 'proxy-preventextensions'
+			})
 	})
 	.run(function($rootScope, AppLogger) {
 		$rootScope.appLogger = AppLogger;
