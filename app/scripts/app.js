@@ -146,6 +146,11 @@ angular
 				templateUrl : 'app/partials/ecma6/proxy-has.html',
 				controller : 'proxy-has'
 			})
+			.state('ecma6.proxy-set', {
+				url : '/proxy-set',
+				templateUrl : 'app/partials/ecma6/proxy-set.html',
+				controller : 'proxy-set'
+			})
 	})
 	.run(function($rootScope, AppLogger) {
 		$rootScope.appLogger = AppLogger;

@@ -1,0 +1,38 @@
+<ul>
+	<li>Trap for setting value of the property</li>
+	<li>It gets four parameters
+		<ul>
+			<li>target - target object</li>
+			<li>property - name of property to be set</li>
+			<li>value - value that should be set to property</li>
+			<li>receiver - object against which assignement was originaly called</li>
+		</ul>
+	</li>
+	<li>Return true/false depending if setting was successful or not (in strict mode, false will thorw TypeError exception)</li>
+</ul>
+<pre>
+var myObject = {
+	name : 'myObject',
+	height : 180
+};
+
+var proxy = new Proxy(myObject, {
+	set : function(target, property, value, receiver) {
+		<span class="message-class-proxy-set-1">AppLogger.info('Setting value for ' + property + ' to ' + value);</span>
+		if (property === 'height' && value > 300) {
+			return false;
+		}
+		target[property] = value;
+		return true;
+	}
+});
+
+proxy.height = 150;
+<span class="message-class-proxy-set-2">AppLogger.info(myObject.height);</span>
+
+proxy.height = 500;
+<span class="message-class-proxy-set-3">AppLogger.info(myObject.height);</span>
+
+proxy.name = 'NewName';
+<span class="message-class-proxy-set-4">AppLogger.info(myObject.name);</span>
+</pre>
