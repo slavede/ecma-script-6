@@ -26,5 +26,23 @@
 	</li>
 </ul>
 <pre>
-AppLogger
+var myObject = {
+	name : 'myObject',
+	height : 180
+};
+var proxy = new Proxy(myObject, {
+	getOwnPropertyDescriptor : function(target, prop) {
+		<span class="message-class-proxy-getownproperty-1">AppLogger.info('Getting descriptor via proxy for ' + prop);</span>
+		if (prop === 'height') {
+			return {
+				value: '100'
+			};
+		} else {
+			return Object.getOwnPropertyDescriptor(target, prop);
+		}
+	}
+});
+
+<span class="message-class-proxy-getownproperty-2">AppLogger.info(Object.getOwnPropertyDescriptor(proxy, 'height'));</span>
+<span class="message-class-proxy-getownproperty-3">AppLogger.info(Object.getOwnPropertyDescriptor(proxy, 'name'));</span>
 </pre>

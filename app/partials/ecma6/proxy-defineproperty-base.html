@@ -1,0 +1,56 @@
+<ul>
+	<li>Trap for Object.defineProperty()
+		<ul>
+			<li>
+				Defines new property on an object or modifies an existing one. Returns the object itself
+			</li>
+			<li>
+				Object.defineProperty(object, property, descriptor);
+			</li>
+			<li>
+				More details <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty">here</a>.
+			</li>
+		</ul>
+	</li>
+	<li>It gets three parameters
+		<ul>
+			<li>target - which object we are defining proxy for</li>
+			<li>property - name of property we are defining descriptor for</li>
+			<li>descriptor</li>
+		</ul>
+	</li>
+</ul>
+<pre>
+var myObject = {
+	name : 'myObject',
+	height : 180
+};
+
+var proxy = new Proxy(myObject, {
+	defineProperty : function(target, property, descriptor) {
+		<span class="message-class-proxy-defineproperty-1">AppLogger.info('Defining property through proxy');</span>
+		if (property === 'last_name') {
+			return false;
+		}
+		Object.defineProperty(target, property, descriptor);
+		return true;
+	}
+});
+
+var descriptor = {
+	configurable : true,
+	value : 'myLastName'
+};
+var descriptor2 = {
+	configurable : true,
+	value : 'desc2Value'
+};
+
+<span class="message-class-proxy-defineproperty-1">Object.defineProperty(proxy, "last_name", descriptor);</span>
+<span class="message-class-proxy-defineproperty-1">Object.defineProperty(proxy, "surname", descriptor2);</span>
+
+<span class="message-class-proxy-defineproperty-2">AppLogger.info(myObject.name, 'proxy-defineproperty-2');</span>
+// not defined because proxy didn't let us do it
+<span class="message-class-proxy-defineproperty-3">AppLogger.info(myObject.last_name, 'proxy-defineproperty-3');</span>
+<span class="message-class-proxy-defineproperty-4">AppLogger.info(myObject.surname, 'proxy-defineproperty-4');</span>
+</pre>
