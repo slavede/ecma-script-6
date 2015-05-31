@@ -1,0 +1,33 @@
+<ul>
+	<li>Trap for delete operator which deletes property from the object (delete object[property])</li>
+	<li>It gets two parameters
+		<ul>
+			<li>target - target object</li>
+			<li>property - property we are trying to delete</li>
+		</ul>
+	</li>
+	<li>Return true/false depending if deleting was successful or not (in strict mode, false will thorw TypeError exception)</li>
+</ul>
+<pre>
+var myObject = {
+	name : 'MyName',
+	height : 180,
+};
+
+var proxy = new Proxy(myObject, {
+	deleteProperty : function(target, prop) {
+		<span class="message-class-proxy-deleteproperty-1">AppLogger.info('Deleting property ' + prop, 'proxy-deleteproperty-1');</span>
+		if (prop === 'name') {
+			return false;
+		}
+		delete target[prop];
+		return true;
+	}
+});
+
+<span class="message-class-proxy-deleteproperty-2">AppLogger.info(delete proxy.name);</span>
+<span class="message-class-proxy-deleteproperty-3">AppLogger.info('myObject.name: ' + myObject.name, 'proxy-deleteproperty-2');</span>
+
+<span class="message-class-proxy-deleteproperty-4">AppLogger.info(delete proxy.height);</span>
+<span class="message-class-proxy-deleteproperty-5">AppLogger.info('myObject.height: ' + myObject.height, 'proxy-deleteproperty-3');</span>
+</pre>

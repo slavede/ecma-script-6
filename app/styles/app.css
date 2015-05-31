@@ -64,7 +64,7 @@ main {
 }
 @media screen and (min-width: 960px) {
   .ecma6-view .ecma6-content {
-    width: 83%;
+    width: 81%;
     display: inline;
     float: left;
     margin-left: 2%;
@@ -82,7 +82,7 @@ main {
     line-height: 2.5em;
   }
   .ecma6-view .ecma6-sidebar {
-    width: 15%;
+    width: 17%;
     display: inline;
     float: left;
   }
