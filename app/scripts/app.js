@@ -131,6 +131,11 @@ angular
 				templateUrl : 'app/partials/ecma6/proxy-preventextensions.html',
 				controller : 'proxy-preventextensions'
 			})
+			.state('ecma6.proxy-getownproperty', {
+				url : '/proxy-getownproperty',
+				templateUrl : 'app/partials/ecma6/proxy-getownproperty.html',
+				controller : 'proxy-getownproperty'
+			})
 	})
 	.run(function($rootScope, AppLogger) {
 		$rootScope.appLogger = AppLogger;
