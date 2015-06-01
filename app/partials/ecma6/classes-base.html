@@ -1,4 +1,7 @@
 <p>Replacement for prototype-based inheritance</p>
+<a ng-init="displayClassDefinition=true" ng-show="displayClassDefinition === true" ng-click="displayClassDefinition = false">Hide Class definition</a>
+<a ng-show="displayClassDefinition === false" ng-click="displayClassDefinition = true">Show Class definition</a>
+<div ng-hide="!displayClassDefinition">
 <ul>
 	<li>To create a class you should use keyword 'class'</li>
 	<pre>
@@ -54,12 +57,15 @@ class Bicycle extends Vehicle{
 }
 </pre>
 </ul>
+</div>
 
 <pre>
+// public methods go into prototype
 <span class="message-class-classes-1">AppLogger.info(Vehicle.prototype.makeASound !== undefined);</span>
 <span class="message-class-classes-2">AppLogger.info(Vehicle.prototype["string keyed method"] !== undefined);</span>
+// static methods do not go into prototype
 <span class="message-class-classes-3">AppLogger.info(Vehicle.prototype.minimumWheels === undefined);</span>
-
+// static methods are placed directly in Vehicle class
 <span class="message-class-classes-4">AppLogger.info(Vehicle.minimumWheels !== undefined);</span>
 
 var vehicle = new Vehicle('red');
