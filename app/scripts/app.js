@@ -12,6 +12,10 @@ angular
 				url : '/',
 				templateUrl : 'app/partials/home.html'
 			})
+			.state('about-me', {
+				url : '/about-me',
+				templateUrl : 'app/partials/about-me.html'
+			})
 			.state('ecma6', {
 				url : '/ecma6',
 				templateUrl : 'app/partials/ecma6.html'

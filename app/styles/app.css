@@ -118,3 +118,22 @@ main {
     color: #428bca;
   }
 }
+.about-me {
+  display: table;
+}
+.about-me p {
+  display: table-cell;
+  vertical-align: middle;
+  padding-top: 5%;
+}
+.about-me img {
+  float: left;
+  border-radius: 35px;
+}
+.contact-info a.social-network-link {
+  opacity: 0.3;
+}
+.contact-info a.social-network-link:hover {
+  opacity: 1;
+  text-decoration: none;
+}
