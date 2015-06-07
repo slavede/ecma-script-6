@@ -1,0 +1,58 @@
+<ul>
+	<li>Trap for for..in expression. It's using iterators to iterate through data.</li>
+	<li>It gets one parameter
+		<ul>
+			<li>target - target object</li>
+		</ul>
+	</li>
+	<li>Must return iterator.</li>
+	<li>More details about how iterators work in section about <a ui-sref="ecma6.generators-babel">generators</a></li>
+	<li>Here I have created iterator which limits number of elements to be iterated to 3</li>
+</ul>
+<pre>
+var myObject1 = [1,2,3,4,5],
+	myObject2 = [100, 101],
+	enumerateFuncion = function* (objects) {
+		var counter = 0,
+			obj;
+		<span class="message-class-proxy-enumerate-1">AppLogger.info('Starting to enumerate in proxy');</span>
+		<span class="message-class-proxy-enumerate-2">AppLogger.info(objects);</span>
+		
+		if (objects.length &lt 3) {
+			for (obj of objects) {
+				yield obj;
+			}
+		} else {
+			for (obj of objects) {
+				if (counter &lt 3) {
+					yield obj;
+					counter++;
+				}
+			}
+		}
+	};
+
+var proxy1 = new Proxy(myObject1, {
+	enumerate : function(target) {
+		return enumerateFuncion(target);
+	}
+});
+
+var proxy2 = new Proxy(myObject2, {
+	enumerate : function(target) {
+		return enumerateFuncion(target);
+	}
+});
+
+var obj;
+
+<span class="message-class-proxy-enumerate-3">AppLogger.info('Iterating myObject1');</span>
+for (obj in proxy1) {
+	<span class="message-class-proxy-enumerate-4">AppLogger.info(obj);</span>
+}
+
+<span class="message-class-proxy-enumerate-5">AppLogger.info('Iterating myObject2');</span>
+for (obj in proxy2) {
+	<span class="message-class-proxy-enumerate-6">AppLogger.info(obj);</span>
+}
+</pre>

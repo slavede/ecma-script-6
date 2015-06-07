@@ -156,6 +156,11 @@ angular
 				templateUrl : 'app/partials/ecma6/proxy-deleteproperty.html',
 				controller : 'proxy-deleteproperty'
 			})
+			.state('ecma6.proxy-enumerate', {
+				url : '/proxy-enumerate',
+				templateUrl : 'app/partials/ecma6/proxy-enumerate.html',
+				controller : 'proxy-enumerate'
+			})
 	})
 	.run(function($rootScope, AppLogger) {
 		$rootScope.appLogger = AppLogger;
