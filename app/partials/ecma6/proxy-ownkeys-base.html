@@ -1,0 +1,48 @@
+<ul>
+	<li>Trap for Object.getOwnPropertyNames(obj)
+		<ul>
+			<li>Returns an array of strings which represent properties that directly belong to object</li>
+			<li>Ordering is the same as in for..in loop (or in Object.keys())</li>
+		</ul>
+	</li>
+	<li>It must return iterator object</li>
+	<li>More details about how iterators work in section about <a ui-sref="ecma6.generators-babel">generators</a></li>
+	<li>It also interceptes Object.getOwnPropertySymbols() and Object.keys()</li>
+</ul>
+<pre>
+function Parent () {
+	this.size = 'BIG';
+}
+
+function ChildOne() {
+	this.name = 'ChildOne';
+	this.height = 180;
+}
+
+function ChildTwo() {
+	this.name = 'ChildTwo';
+}
+
+ChildOne.prototype = new Parent();
+ChildTwo.prototype = new Parent();
+
+var c1 = new ChildOne();
+var c2 = new ChildTwo();
+
+var p1 = new Proxy(c1, {
+	ownKeys : function(target) {
+		<span class='message-class-proxy-ownkeys-3'>AppLogger.info('Getting keys in proxy1');</span>
+		return Object.keys(c1);
+	}
+});
+
+var p2 = new Proxy(c2, {
+	ownKeys : function(target) {
+		<span class='message-class-proxy-ownkeys-4'>AppLogger.info('Getting keys in proxy2');</span>
+		return ['la'];
+	}
+});
+
+<span class='message-class-proxy-ownkeys-1'>AppLogger.info(Object.getOwnPropertyNames(p1));</span>
+<span class='message-class-proxy-ownkeys-2'>AppLogger.info(Object.getOwnPropertyNames(p2));</span>
+</pre>
