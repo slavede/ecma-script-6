@@ -7,7 +7,6 @@
 			<li>arguments - argument list for the called function</li>
 		</ul>
 	</li>
-	<li>In</li>
 </ul>
 <pre>
 function Dog(name) {
@@ -15,13 +14,13 @@ function Dog(name) {
 }
 
 Dog.prototype.bark = function() {
-	<span class="message-class-proxy-apply-1">AppLogger.info('Wuf from ' + this.name, 'proxy-apply-1');</span>
+	<span class="message-class-proxy-apply-1">AppLogger.info('Wuf from ' + this.name);</span>
 };
 
 Dog.prototype.say = function(extra) {
-	<span class="message-class-proxy-apply-2">AppLogger.info('Hello from ' + this.name, 'proxy-apply-2');</span>
+	<span class="message-class-proxy-apply-2">AppLogger.info('Hello from ' + this.name);</span>
 	if (extra) {
-		<span class="message-class-proxy-apply-3">AppLogger.info('. And ' + extra, 'proxy-apply-3');</span>
+		<span class="message-class-proxy-apply-3">AppLogger.info('. And ' + extra);</span>
 	}
 };
 
@@ -29,7 +28,7 @@ var dog = new Dog('Snuppy');
 
 var proxy = new Proxy(dog.say, {
 	apply : function(target, thisArgument, argList) {
-		<span class="message-class-proxy-apply-4">AppLogger.info('Going through apply', 'proxy-apply-4');</span>
+		<span class="message-class-proxy-apply-4">AppLogger.info('Going through apply');</span>
 		argList[0] = argList[0] + '---went through apply';
 		target.apply(thisArgument, argList);
 	}

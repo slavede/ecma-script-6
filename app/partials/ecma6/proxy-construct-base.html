@@ -1,0 +1,40 @@
+<ul>
+	<li>Trap for a constructor</li>
+	<li>It gets two parameters
+		<ul>
+			<li>target - which object we are defining proxy for</li>
+			<li>arguments - argument list for the called function (constructor)</li>
+		</ul>
+	</li>
+	<li><b>It must return object</b></li>
+</ul>
+<pre>
+function Dog(name) {
+	this.name = name;
+}
+
+Dog.prototype.bark = function() {
+	<span class="message-class-proxy-construct-1">AppLogger.info('Wuf from ' + this.name);</span>
+};
+
+Dog.prototype.say = function(extra) {
+	<span class="message-class-proxy-construct-2">AppLogger.info('Hello from ' + this.name);</span>
+	if (extra) {
+		<span class="message-class-proxy-construct-3">AppLogger.info('. And ' + extra);</span>
+	}
+};
+
+var proxy = new Proxy(Dog, {
+	construct: function(target, argumentsList) {
+		<span class="message-class-proxy-construct-4">AppLogger.info('Constructing in proxy');</span>
+		argumentsList[0] = argumentsList[0].toUpperCase();
+		return new target(argumentsList);
+	}
+});
+
+var dog1 = new proxy('Snuppy');
+var dog2 = new Dog('Snuppy');
+
+dog1.say();
+dog2.say();
+</pre>
