@@ -2,7 +2,7 @@
 	<h2>EcmaScript6 Examples</h2>
 	<hr />
 	<aside-menu menu-elements='menuItems' api='asideMenuApi' menu-active-marker></aside-menu>
-	<div ui-view class='ecma6-content'>
+	<div ui-view class='ecma6-content' ng-class='{"full-width-content":!asideMenuOpened}'>
 		<h3>What will you find here?</h3>
 		<ul class='ecma6-intro'>
 			<li><a ui-sref="ecma6.templatestrings-babel">Template Strings</a> give us new way of interpolation of strings</li>

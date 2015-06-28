@@ -77,6 +77,9 @@ main {
   display: inline-block;
   margin-bottom: 25px;
 }
+.ecma6-view .ecma6-content.full-width-content {
+  width: 96%;
+}
 .ecma6-view .ecma6-intro li {
   display: block;
   font-size: 1.2em;

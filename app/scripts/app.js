@@ -189,6 +189,9 @@ angular
 		$rootScope.$on('$stateChangeStart', function() {
 			$rootScope.appLogger.clear();
 		});
+		$rootScope.$on('asideMenuToggle', function(event, isShown) {
+			$rootScope.asideMenuOpened = isShown;
+		});
 		$rootScope.asideMenuApi = {};
 		$rootScope.menuItems = [
 			{

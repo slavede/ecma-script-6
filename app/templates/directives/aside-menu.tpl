@@ -1,5 +1,5 @@
 <div>
-	<aside class='aside-menu' ng-show='asideMenuShown'>
+	<aside class='aside-menu' ng-class='{"aside-menu-shown":asideMenuShown}' ng-show='asideMenuShown'>
 		<div class='hide-aside-menu' ng-click='hideAsideMenu()'>
 			&lt &lt
 		</div>

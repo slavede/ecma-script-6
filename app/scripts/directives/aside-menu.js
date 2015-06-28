@@ -25,10 +25,12 @@ angular.module( 'EcmaScript6' ).directive( 'asideMenu', [
                         $.extend( true, defaults, scope.options );
                         scope.showAsideMenu = function () {
                             scope.asideMenuShown = true;
+                            scope.$emit('asideMenuToggle', true);
                         };
 
                         scope.hideAsideMenu = function () {
                             scope.asideMenuShown = false;
+                            scope.$emit('asideMenuToggle', false);
                         };
 
                         if ( scope.api ) {
@@ -47,7 +49,7 @@ angular.module( 'EcmaScript6' ).directive( 'asideMenu', [
                         }
 
                         if (defaults.onClickClose) {
-                        	element.bind('click', 'a.menu-link', function() {
+                        	element.on('click', 'a.menu-link', function() {
                         		scope.hideAsideMenu();
                         	});
                         }
