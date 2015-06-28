@@ -105,16 +105,17 @@ main {
   text-decoration: none;
 }
 .aside-menu {
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
-  border-right: 1px solid black;
+  background-color: whitesmoke;
+  border-top: 1px solid #cccccc;
+  border-bottom: 1px solid #cccccc;
+  border-right: 1px solid #cccccc;
   padding: 10px;
 }
 .aside-menu .hide-aside-menu {
   cursor: pointer;
   top: -11px;
   right: -11px;
-  border: 1px solid black;
+  border: 1px solid #cccccc;
   float: right;
   display: inline-block;
   position: relative;
@@ -156,9 +157,9 @@ main {
 }
 .show-aside-menu {
   cursor: pointer;
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
-  border-right: 1px solid black;
+  border-top: 1px solid #cccccc;
+  border-bottom: 1px solid #cccccc;
+  border-right: 1px solid #cccccc;
   float: left;
   display: inline-block;
   position: relative;
