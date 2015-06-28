@@ -7,6 +7,10 @@
 		float : right;
 		display : inline-block;
 		position : relative;
+		opacity: 0.4;
+		&:hover {
+			opacity: 1;
+		}
 	}
 	border-top: 1px solid black;
 	border-bottom: 1px solid black;
@@ -48,8 +52,36 @@
 }
 .show-aside-menu {
 	cursor: pointer;
-	border : 1px solid black;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+	border-right: 1px solid black;
 	float : left;
 	display : inline-block;
 	position : relative;
+	opacity: 0.4;
+	&:hover {
+		opacity: 1;
+	}
+}
+
+@media screen and (max-width : 1280px) {
+	.aside-menu {
+		ul {
+			li {
+				&.header {
+					a.menu-link {
+						font-size: 1.2em;
+						i.browser-note {
+							font-size: 0.60em;
+						}
+					}
+				}
+				&.sub-header {
+					a.menu-link {
+						font-size: 0.9em;
+					}
+				}
+			}
+		}
+	}
 }

@@ -251,23 +251,23 @@ angular
 						display : '.getPrototypeOf()'
 					},
 					{
-						sref : 'ecma6.proxy-setPrototypeOf',
+						sref : 'ecma6.proxy-setprototypeof',
 						display : '.setPrototypeOf()'
 					},
 					{
-						sref : 'ecma6.proxy-isExtendible',
+						sref : 'ecma6.proxy-isextendible',
 						display : '.isExtendible()'
 					},
 					{
-						sref : 'ecma6.proxy-preventExtensions',
+						sref : 'ecma6.proxy-preventextensions',
 						display : '.preventExtensions()'
 					},
 					{
-						sref : 'ecma6.proxy-getOwnPropertyDescriptor',
+						sref : 'ecma6.proxy-getownproperty',
 						display : '.getOwnPropertyDescriptor()'
 					},
 					{
-						sref : 'ecma6.proxy-defineProperty',
+						sref : 'ecma6.proxy-defineproperty',
 						display : '.defineProperty()'
 					},
 					{
