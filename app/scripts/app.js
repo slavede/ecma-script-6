@@ -179,13 +179,126 @@ angular
 				url : '/proxy-construct',
 				templateUrl : 'app/partials/ecma6/proxy-construct.html',
 				controller : 'proxy-construct'
-			})
+			});
 
 
 	})
 	.run(function($rootScope, AppLogger) {
+		'use strict';
 		$rootScope.appLogger = AppLogger;
-		$rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
+		$rootScope.$on('$stateChangeStart', function() {
 			$rootScope.appLogger.clear();
 		});
+		$rootScope.asideMenuApi = {};
+		$rootScope.menuItems = [
+			{
+				sref : 'ecma6.templatestrings-babel',
+				display : 'Template Strings'
+			},
+			{
+				sref : 'ecma6.let-babel',
+				display : 'Let Block'
+			},
+			{
+				sref: 'ecma6.arrowfunction-babel',
+				display : 'Arrow Function'
+			},
+			{
+				sref : 'ecma6.classes-babel',
+				display : 'Classes'
+			},
+			{
+				sref : 'ecma6.modules-babel',
+				display : 'Modules',
+				note : '(only in Firefox)'
+			},
+			{
+				sref : 'ecma6.default-parameters-babel',
+				display : 'Default Parameters'
+			},
+			{
+				sref : 'ecma6.rest-parameters-babel',
+				display : 'Rest Parameters'
+			},
+			{
+				sref : 'ecma6.generators-babel',
+				display : 'Generators'
+			},
+			{
+				sref : 'ecma6.promises',
+				display : 'Promises'
+			},
+			{
+				sref : 'ecma6.map-babel',
+				display : 'Map'
+			},
+			{
+				sref : 'ecma6.map-set',
+				display : 'Set'
+			},
+			{
+				sref : 'ecma6.const',
+				display : 'Constants',
+				note : '(only in Chrome)'
+			},
+			{
+				sref : 'ecma6.proxy',
+				display : 'Proxy',
+				note : '(only in Firefox)',
+				subItems : [
+					{
+						sref : 'ecma6.proxy-getprototypeof',
+						display : '.getPrototypeOf()'
+					},
+					{
+						sref : 'ecma6.proxy-setPrototypeOf',
+						display : '.setPrototypeOf()'
+					},
+					{
+						sref : 'ecma6.proxy-isExtendible',
+						display : '.isExtendible()'
+					},
+					{
+						sref : 'ecma6.proxy-preventExtensions',
+						display : '.preventExtensions()'
+					},
+					{
+						sref : 'ecma6.proxy-getOwnPropertyDescriptor',
+						display : '.getOwnPropertyDescriptor()'
+					},
+					{
+						sref : 'ecma6.proxy-defineProperty',
+						display : '.defineProperty()'
+					},
+					{
+						sref : 'ecma6.proxy-has',
+						display : '.has()'
+					},
+					{
+						sref : 'ecma6.proxy-set',
+						display : '.set()'
+					},
+					{
+						sref : 'ecma6.proxy-deleteproperty',
+						display : '.deleteproperty()'
+					},
+					{
+						sref : 'ecma6.proxy-enumerate',
+						display : '.enumerate()'
+					},
+					{
+						sref : 'ecma6.proxy-ownkeys',
+						display : '.ownkeys()'
+					},
+					{
+						sref : 'ecma6.proxy-apply',
+						display : '.apply()'
+					},
+					{
+						sref : 'ecma6.proxy-construct',
+						display : '.construct()'
+					}
+				]
+			}
+		];
 	});

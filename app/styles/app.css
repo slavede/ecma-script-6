@@ -28,7 +28,7 @@ main {
   display: inline;
   float: left;
   margin: 0 auto;
-  padding: 25px;
+  padding: 25px 25px 25px 0;
 }
 .log-output {
   width: 20%;
@@ -62,61 +62,28 @@ main {
   border: 1px solid red;
   cursor: pointer;
 }
-@media screen and (min-width: 960px) {
-  .ecma6-view .ecma6-content {
-    width: 81%;
-    display: inline;
-    float: left;
-    margin-left: 2%;
-  }
-  .ecma6-view .ecma6-content a {
-    cursor: pointer;
-  }
-  .ecma6-view .ecma6-content h3 {
-    display: inline-block;
-    margin-bottom: 25px;
-  }
-  .ecma6-view .ecma6-intro li {
-    display: block;
-    font-size: 1.2em;
-    line-height: 2.5em;
-  }
-  .ecma6-view .ecma6-sidebar {
-    width: 17%;
-    display: inline;
-    float: left;
-  }
-  .ecma6-view .ecma6-sidebar ul {
-    padding: 0;
-    list-style: none;
-  }
-  .ecma6-view .ecma6-sidebar ul li.header {
-    margin-bottom: 15px;
-    word-wrap: break-word;
-  }
-  .ecma6-view .ecma6-sidebar ul li.header a.menu-link {
-    text-decoration: none;
-    font-size: 1.5em;
-  }
-  .ecma6-view .ecma6-sidebar ul li.header a.menu-link i.browser-note {
-    font-size: 0.75em;
-  }
-  .ecma6-view .ecma6-sidebar ul li.header a.menu-link:hover {
-    text-decoration: none;
-    color: #428bca;
-  }
-  .ecma6-view .ecma6-sidebar ul li.sub-header {
-    margin-left: 15px;
-    word-wrap: break-word;
-  }
-  .ecma6-view .ecma6-sidebar ul li.sub-header a.menu-link {
-    text-decoration: none;
-    font-size: 1.1em;
-  }
-  .ecma6-view .ecma6-sidebar ul li.sub-header a.menu-link:hover {
-    text-decoration: none;
-    color: #428bca;
-  }
+.ecma6-view .aside-menu {
+  width: 17%;
+  display: inline;
+  float: left;
+}
+.ecma6-view .ecma6-content {
+  width: 81%;
+  display: inline;
+  float: left;
+  margin-left: 2%;
+}
+.ecma6-view .ecma6-content a {
+  cursor: pointer;
+}
+.ecma6-view .ecma6-content h3 {
+  display: inline-block;
+  margin-bottom: 25px;
+}
+.ecma6-view .ecma6-intro li {
+  display: block;
+  font-size: 1.2em;
+  line-height: 2.5em;
 }
 .about-me {
   display: table;
@@ -136,4 +103,57 @@ main {
 .contact-info a.social-network-link:hover {
   opacity: 1;
   text-decoration: none;
+}
+.aside-menu {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+  padding: 10px;
+}
+.aside-menu .hide-aside-menu {
+  cursor: pointer;
+  top: -11px;
+  right: -11px;
+  border: 1px solid black;
+  float: right;
+  display: inline-block;
+  position: relative;
+}
+.aside-menu ul {
+  padding: 0;
+  list-style: none;
+}
+.aside-menu ul li.header {
+  margin-bottom: 15px;
+  word-wrap: break-word;
+}
+.aside-menu ul li.header a.menu-link {
+  text-decoration: none;
+  font-size: 1.5em;
+}
+.aside-menu ul li.header a.menu-link i.browser-note {
+  font-size: 0.75em;
+}
+.aside-menu ul li.header a.menu-link:hover {
+  text-decoration: none;
+  color: #428bca;
+}
+.aside-menu ul li.sub-header {
+  margin-left: 15px;
+  word-wrap: break-word;
+}
+.aside-menu ul li.sub-header a.menu-link {
+  text-decoration: none;
+  font-size: 1.1em;
+}
+.aside-menu ul li.sub-header a.menu-link:hover {
+  text-decoration: none;
+  color: #428bca;
+}
+.show-aside-menu {
+  cursor: pointer;
+  border: 1px solid black;
+  float: left;
+  display: inline-block;
+  position: relative;
 }
