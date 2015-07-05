@@ -4,7 +4,7 @@ angular.module( 'EcmaScript6' ).directive( 'asideMenu', [
         'use strict';
         return {
             restrict: 'E',
-            templateUrl: 'templates/directives/aside-menu.tpl',
+            templateUrl: 'app/templates/directives/aside-menu.tpl',
             scope: {
                 menuElements: '=',
                 options: '=?',
