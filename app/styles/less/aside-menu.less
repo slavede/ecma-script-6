@@ -1,4 +1,9 @@
 .aside-menu {
+	&.ng-hide {
+		opacity: 0;
+		transition:all linear 0.5s;
+		-webkit-transition:all linear 0.5s;
+	}
 	.hide-aside-menu {
 		cursor: pointer;
 		top: -11px;
@@ -32,7 +37,7 @@
 					}
 					&:hover {
 						text-decoration: none;
-						color:#428bca;
+						color:#428bff;
 					}
 				}
 			}
@@ -44,7 +49,7 @@
 					font-size: 1.1em;
 					&:hover {
 						text-decoration: none;
-						color:#428bca;
+						color:#428bff;
 					}
 				}
 			}
@@ -59,9 +64,16 @@
 	float : left;
 	display : inline-block;
 	position : relative;
+	opacity: 0;
+}
+.show-aside-menu.show-aside-menu-shown {
+	transition:all linear 1.5s;
+	-webkit-transition:all linear 1.5s;
 	opacity: 0.4;
 	&:hover {
 		opacity: 1;
+		transition:none;
+		-webkit-transition: none;
 	}
 }
 

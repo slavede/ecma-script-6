@@ -1,7 +1,7 @@
 <div>
 	<aside class='aside-menu' ng-class='{"aside-menu-shown":asideMenuShown}' ng-show='asideMenuShown'>
 		<div class='hide-aside-menu' ng-click='hideAsideMenu()'>
-			&lt &lt
+			<span class='glyphicon glyphicon-chevron-left'></span>
 		</div>
 	    <nav>
 			<ul>
@@ -15,7 +15,7 @@
 			</ul>
 		</nav>
 	</aside>
-	<div class='show-aside-menu' ng-hide='asideMenuShown' ng-click='showAsideMenu()'>
-		&gt &gt
+	<div class='show-aside-menu' ng-class='{"show-aside-menu-shown":!asideMenuShown}' ng-hide='asideMenuShown' ng-click='showAsideMenu()'>
+		<span class='glyphicon glyphicon-chevron-right'></span>
 	</div>
 </div>

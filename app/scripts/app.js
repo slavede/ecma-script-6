@@ -1,5 +1,5 @@
 angular
-	.module('EcmaScript6', ['ui.router'])
+	.module('EcmaScript6', ['ui.router', 'ngAnimate'])
 	.config(function($stateProvider, $urlRouterProvider) {
 		//
 		// For any unmatched url, redirect to /state1
@@ -236,7 +236,7 @@ angular
 				display : 'Map'
 			},
 			{
-				sref : 'ecma6.map-set',
+				sref : 'ecma6.set-babel',
 				display : 'Set'
 			},
 			{

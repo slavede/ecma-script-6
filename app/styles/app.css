@@ -56,7 +56,7 @@ main {
 .active-ui-sref {
   color: #2a1ee0;
   font-size: 1.3em;
-  font-weight: 600;
+  font-weight: 500;
 }
 .focused-message-class {
   border: 1px solid red;
@@ -111,6 +111,11 @@ main {
   border-right: 1px solid #cccccc;
   padding: 10px;
 }
+.aside-menu.ng-hide {
+  opacity: 0;
+  transition: all linear 0.5s;
+  -webkit-transition: all linear 0.5s;
+}
 .aside-menu .hide-aside-menu {
   cursor: pointer;
   top: -11px;
@@ -141,7 +146,7 @@ main {
 }
 .aside-menu ul li.header a.menu-link:hover {
   text-decoration: none;
-  color: #428bca;
+  color: #428bff;
 }
 .aside-menu ul li.sub-header {
   margin-left: 15px;
@@ -153,7 +158,7 @@ main {
 }
 .aside-menu ul li.sub-header a.menu-link:hover {
   text-decoration: none;
-  color: #428bca;
+  color: #428bff;
 }
 .show-aside-menu {
   cursor: pointer;
@@ -163,10 +168,17 @@ main {
   float: left;
   display: inline-block;
   position: relative;
+  opacity: 0;
+}
+.show-aside-menu.show-aside-menu-shown {
+  transition: all linear 1.5s;
+  -webkit-transition: all linear 1.5s;
   opacity: 0.4;
 }
-.show-aside-menu:hover {
+.show-aside-menu.show-aside-menu-shown:hover {
   opacity: 1;
+  transition: none;
+  -webkit-transition: none;
 }
 @media screen and (max-width: 1280px) {
   .aside-menu ul li.header a.menu-link {
