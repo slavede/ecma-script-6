@@ -212,8 +212,7 @@ angular
 			},
 			{
 				sref : 'ecma6.modules-babel',
-				display : 'Modules',
-				note : '(only in Firefox)'
+				display : 'Modules'
 			},
 			{
 				sref : 'ecma6.default-parameters-babel',
