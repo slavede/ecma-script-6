@@ -191,8 +191,12 @@ angular
 	.run(function($rootScope, AppLogger) {
 		'use strict';
 		$rootScope.appLogger = AppLogger;
+		$rootScope.appLoggerTittleHolderStyle = {
+			'margin-bottom' : '0px'
+		};
 		$rootScope.$on('$stateChangeStart', function() {
 			$rootScope.appLogger.clear();
+			$rootScope.appLoggerTittleHolderStyle['margin-bottom'] = '0px';
 		});
 		$rootScope.$on('asideMenuToggle', function(event, isShown) {
 			$rootScope.asideMenuOpened = isShown;
