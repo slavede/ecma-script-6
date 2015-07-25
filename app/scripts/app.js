@@ -179,6 +179,11 @@ angular
 				url : '/proxy-construct',
 				templateUrl : 'app/partials/ecma6/proxy-construct.html',
 				controller : 'proxy-construct'
+			})
+			.state('ecma6.typedarray', {
+				url : '/typedarray',
+				templateUrl : 'app/partials/ecma6/typedarray.html',
+				controller : 'typedarray'
 			});
 
 
@@ -242,6 +247,11 @@ angular
 				sref : 'ecma6.const',
 				display : 'Constants',
 				note : '(only in Chrome)'
+			},
+			{
+				sref : 'ecma6.typedarray',
+				display : 'Typed Array',
+				note : '(only in Firefox)'
 			},
 			{
 				sref : 'ecma6.proxy',

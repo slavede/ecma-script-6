@@ -1,0 +1,82 @@
+<p>
+	Allows declaring array with specicic type, length and/or buffer.
+</p>
+<ul>
+	<li>
+		Few constructors:
+		<ul>
+			<li>new TypedArray(length)</li>
+			<li>new TypedArray(typedArray)</li>
+			<li>new TypedArray(object)</li>
+			<li>new TypedArray(buffer [,bytesOffset [,length]])</li>
+		</ul>
+		where
+		<ul>
+			<li>length - if given, array with that many zeroes will be created</li>
+			<li>typedArray - it can be object of any of the typed arrays, copies (and converts) values into new array</li>
+			<li>object - creates array from the object</li>
+			<li>TypedArray can be one of the following:
+				<ul>
+					<li>Int8Array()</li>
+					<li>Uint8Array()</li>
+					<li>Uint8ClampedArray() - values clamped to 0-255</li>
+					<li>Int16Array()</li>
+					<li>Uint16Array()</li>
+					<li>Int32Array()</li>
+					<li>Uint32Array()</li>
+					<li>Float32Array()</li>
+					<li>Float64Array()</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>They don't support .push()!!! :o</li>
+</ul>
+<h4>Adding/converting elements</h4>
+<ul>
+	<li>
+		Initially it's an array with zeroes
+		<pre>
+var int8Array = new Int8Array(8);
+<span class="message-class-typedarray-1">AppLogger.info(int8Array.join(','));</span>
+		</pre>
+	</li>
+	<li>
+	To add one element you can't use push as in normal array types, but assign it via index access
+		<pre>
+int8Array[0] = 1;
+<span class="message-class-typedarray-2">AppLogger.info(int8Array.join(','));</span>
+int8Array[1] = -123;
+<span class="message-class-typedarray-3">AppLogger.info(int8Array.join(','));</span>
+int8Array[1] = -128;
+<span class="message-class-typedarray-4">AppLogger.info(int8Array.join(','));</span>
+		</pre>
+	</li>
+	<li>
+		If assigned value out of the scope it will be modulo modified
+		<pre>
+int8Array[1] = -129;
+<span class="message-class-typedarray-5">AppLogger.info(int8Array.join(','));</span>
+int8Array[4] = -130;
+<span class="message-class-typedarray-6">AppLogger.info(int8Array.join(','));</span>
+int8Array[5] = 129;
+<span class="message-class-typedarray-7">AppLogger.info(int8Array.join(','));</span>
+		</pre>		
+	</li>
+	<li>
+		If assigning float to int, it will just strip off everything behind decimal point
+		<pre>
+int8Array[6] = 1.45;
+<span class="message-class-typedarray-8">AppLogger.info(int8Array.join(','));</span>
+int8Array[7] = 1.55;
+<span class="message-class-typedarray-9">AppLogger.info(int8Array.join(','));</span>
+		</pre>
+	</li>
+	<li>
+		If assigning value to index which is outside of the scope of array it will be just ignored.
+		<pre>
+int8Array[8] = 1.55;
+<span class="message-class-typedarray-10">AppLogger.info(int8Array.join(','));</span>
+		</pre>
+	</li>
+</ul>
