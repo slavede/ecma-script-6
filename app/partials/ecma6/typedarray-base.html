@@ -31,6 +31,85 @@
 		</ul>
 	</li>
 	<li>They don't support .push()!!! :o</li>
+	<li>Prototype Methods (which each TypedArray inherits). Examples are <a href="" ng-click='scrollTo("typedarrray-prototype-method-usage")'>here</a>
+		<ul>
+			<li>
+				TypedArray.prototype.copyWithin()
+			</li>
+			<li>
+				TypedArray.prototype.entries()
+			</li>
+			<li>
+				TypedArray.prototype.every()
+			</li>
+			<li>
+				TypedArray.prototype.fill()
+			</li>
+			<li>
+				TypedArray.prototype.filter()
+			</li>
+			<li>
+				TypedArray.prototype.find()
+			</li>
+			<li>
+				TypedArray.prototype.findIndex()
+			</li>
+			<li>
+				TypedArray.prototype.forEach()
+			</li>
+			<li>
+				TypedArray.prototype.indexOf()
+			</li>
+			<li>
+				TypedArray.prototype.join()
+			</li>
+			<li>
+				TypedArray.prototype.keys()
+			</li>
+			<li>
+				TypedArray.prototype.lastIndexOf()
+			</li>
+			<li>
+				TypedArray.prototype.map()
+			</li>
+			<li>
+				TypedArray.prototype.reduce()
+			</li>
+			<li>
+				TypedArray.prototype.reduceRight()
+			</li>
+			<li>
+				TypedArray.prototype.reverse()
+			</li>
+			<li>
+				TypedArray.prototype.set()
+			</li>
+			<li>
+				TypedArray.prototype.slice()
+			</li>
+			<li>
+				TypedArray.prototype.some()
+			</li>
+			<li>
+				TypedArray.prototype.sort() - DOCUMENTATION!!!
+			</li>
+			<li>
+				TypedArray.prototype.subarray()
+			</li>
+			<li>
+				TypedArray.prototype.values()
+			</li>
+			<li>
+				TypedArray.prototype.toLocaleString()
+			</li>
+			<li>
+				TypedArray.prototype.toString()
+			</li>
+			<li>
+				TypedArray.prototype[@@iterator]()
+			</li>
+		</ul>
+	</li>
 </ul>
 <h4>Adding/converting elements</h4>
 <ul>
@@ -79,4 +158,115 @@ int8Array[8] = 1.55;
 <span class="message-class-typedarray-10">AppLogger.info(int8Array.join(','));</span>
 		</pre>
 	</li>
+</ul>
+<h4 id="typedarrray-prototype-method-usage">Prototype methods usage</h4>
+<ul>
+
+	<li><b>copyWithin(target, start[, end])</b></li>
+	<li>It copies sequence of array elements to same array setting them on index 'target', copying starts from start, to end.</li>
+	<li> In this example we said, copy into index 2, starting from index 0
+		<pre>
+var int8ArrayNew = new Int8Array(5);
+int8ArrayNew[0] = 1;
+int8ArrayNew[1] = 2;
+int8ArrayNew.copyWithin(2, 0);
+<span class="message-class-typedarray-11">AppLogger.info(int8Array.join(','));</span>
+		</pre>
+	</li>
+
+	<li><b>entries()</b></li>
+	<li>Returns iterator which contains key/value pairs</li>
+	<pre>
+var int8ArrayNewIterator = int8ArrayNew.entries();
+for (var [key, val] of int8ArrayNewIterator) {
+	<span class="message-class-typedarray-12">AppLogger.info(key + ' : ' + val);</span>
+}
+	</pre>
+
+	<li><b>.every(callback(currentValue, index, array)[, thisArgument])</b></li>
+	<li>Checks each element of array against callback method. If callback returns false once, entire .every() is false, true otherwise</li>
+	<pre>
+var checkForBiggerThanTwo = function(currentValue, index, array) {
+	if (currentValue > 2) {
+		return false;
+	} else {
+		retun true;
+	}
+};
+// int8Array = [1,-123,-128,127,126,-127,1,1]
+// int8ArrayNew = [1, 2, 1, 2, 0]
+<span class="message-class-typedarray-13">AppLogger.info(int8Array.every(checkForBiggerThanTwo));</span>
+<span class="message-class-typedarray-14">AppLogger.info(int8ArrayNew.every(checkForBiggerThanTwo));</span>
+	</pre>
+
+	<li><b>.fill(value[, start = 0[, end = length]])</b></li>
+	<li>Fills array with values from start (defaults to 0) to end (defaults to length)</li>
+	<pre>
+var fillArray1 = new Int8Array(5);
+var fillArray2 = new Int8Array(5);
+var fillArray3 = new Int8Array(5);
+var fillArray4 = new Int8Array(5);
+
+fillArray1.fill(66);
+fillArray2.fill(66, 1);
+fillArray3.fill(66, 1, 2);
+fillArray4.fill(66, 1, 55);
+
+<span class="message-class-typedarray-15">AppLogger.info(fillArray1.join(','));</span>
+<span class="message-class-typedarray-16">AppLogger.info(fillArray2.join(','));</span>
+<span class="message-class-typedarray-17">AppLogger.info(fillArray3.join(','));</span>
+<span class="message-class-typedarray-18">AppLogger.info(fillArray4.join(','));</span>
+	</pre>
+
+	<li><b>.filter(callback(currentValue, index, array)[, thisArgument])</b></li>
+	<li>Creates new typed array based on which return true in callback (which is called for each element)</li>
+<pre>
+// int8Array = [1,-123,-128,127,126,-127,1,1]
+var negativeNumbersAtOddIndex = int8Array.filter(function(currentValue, index) {
+	if (index % 2 === 1 && currentValue < 0) {
+		return true;
+	}
+});
+<span class="message-class-typedarray-19">AppLogger.info(negativeNumbersAtOddIndex.join(','));</span>
+</pre>
+
+	<li><b>.find(callback(currentValue, index, array)[,thisArgument])</b></li>
+	<li>Returns first element for which callback returns true or undefined if doesn't find it.</li>
+	<pre>
+// int8Array = [1,-123,-128,127,126,-127,1,1]
+var isBiggerThan100 = function(currentValue, index, array) {
+	if (currentValue > 100) {
+		return true;
+	} else {
+		return false;
+	}
+};
+<span class="message-class-typedarray-20">AppLogger.info(int8Array.find(isBiggerThan100));</span>
+	</pre>
+
+	<li><b>.findIndex(callback(currentValue, index, array)[,thisArgument])</b></li>
+	<li>Returns index of first element for which callback returns true or -1 if doesn't find it.</li>
+	<pre>
+// int8Array = [1,-123,-128,127,126,-127,1,1]
+var isBiggerThan100 = function(currentValue, index, array) {
+	if (currentValue > 100) {
+		return true;
+	} else {
+		return false;
+	}
+};
+<span class="message-class-typedarray-21">AppLogger.info(int8Array.findIndex(isBiggerThan100));</span>
+	</pre>
+
+	<li><b>.forEach(callback(currentValue, index, array)[,thisArgument])</b></li>
+	<li>Executes callback for each element of typed array</li>
+	<pre>
+// int8Array = [1,-123,-128,127,126,-127,1,1]
+int8Array.forEach(function(currentValue, index, array) {
+	if (currentValue &lt 0) {
+		array[index]= 0;
+	}
+});
+<span class="message-class-typedarray-22">AppLogger.info(int8Array.join(','));</span>
+	</pre>
 </ul>
