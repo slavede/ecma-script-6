@@ -105,9 +105,6 @@
 			<li>
 				TypedArray.prototype.toString()
 			</li>
-			<li>
-				TypedArray.prototype[@@iterator]()
-			</li>
 		</ul>
 	</li>
 </ul>
@@ -268,5 +265,187 @@ int8Array.forEach(function(currentValue, index, array) {
 	}
 });
 <span class="message-class-typedarray-22">AppLogger.info(int8Array.join(','));</span>
+	</pre>
+
+	<li><b>.indexOf(searchValue[, startingFromIndex])</b></li>
+	<li>Returns first index where it finds value given to it, or -1 if not found</li>
+	<li>It can start from specified index, or from beginning if not given</li>
+	<pre>
+// int8Array = [1,0,0,127,126,0,1,1]
+<span class="message-class-typedarray-23">AppLogger.info(int8Array.indexOf(1, 1));</span>
+	</pre>
+
+	<li><b>.join([separator])</b></li>
+	<li>Joins all elements into string, separated by separator (if given, if not it uses ',')</li>
+	<li>Examples shown through entire page :)</li>
+
+	<li><b>.keys()</b></li>
+	<li>Returns iterator which goes through all keys of array (indexes :))</li>
+	<pre>
+// int8Array = [1,0,0,127,126,0,1,1]
+var keys = int8Array.keys();
+for (key of keys) {
+	<span class="message-class-typedarray-24">AppLogger.info(key);</span>
+}
+	</pre>
+
+	<li><b>.lastIndexOf(searchValue[, startingFromIndex])</b></li>
+	<li>Returns last index where it finds value given to it, or -1 if not found</li>
+	<li>It can start from specified index, or from the end if not given</li>
+	<pre>
+// int8Array = [1,0,0,127,126,0,1,1]
+<span class="message-class-typedarray-25">AppLogger.info(int8Array.lastIndexOf(1, 3));</span>
+	</pre>
+
+	<li><b>.map(callback(currentElement, index, array)[,thisArgument]</b></li>
+	<li>Creates new typed array with values modified through map function</li>
+	<pre>
+// int8Array = [1,0,0,127,126,0,1,1]
+var int8ArrayMinus5 = int8Array.map(function(currentElement) {
+	return currentElement - 5;
+});
+<span class="message-class-typedarray-26">AppLogger.info(int8ArrayMinus5.join(','));</span>
+	</pre>
+
+	<li><b>.reduce(callback(previousValue, currentValue, index, array])[,initialValue])</b></li>
+	<li>Reduces all values in array by sending each of them into callback where previous value would be what we've returned in previous call (or if it's first call, value of first element (or initialValue if given)</li>
+	<pre>
+// we'll sum up only last char in number
+var newInt8Array = new Int8Array(4);
+newInt8Array[0] = 51;
+newInt8Array[1] = 51;
+newInt8Array[2] = 62;
+newInt8Array[3] = 72;
+var reducedValue = newInt8Array.reduce(function(previousValue, currentValue, index) {
+	<span class="message-class-typedarray-27">AppLogger.info('index: ' + index);</span>
+	<span class="message-class-typedarray-27">AppLogger.info('previousValue: ' + previousValue);</span>
+	<span class="message-class-typedarray-27">AppLogger.info('currentValue: ' + currentValue);</span>
+	<span class="message-class-typedarray-27">return (previousValue % 10) + (currentValue % 10);</span>
+});
+<span class="message-class-typedarray-28">AppLogger.info('reducedValue: ' + reducedValue);</span>
+	</pre>
+
+	<li><b>.reduceRight(callback(previousValue, currentValue, index, array])[,initialValue])</b></li>
+	<li>It does the same as .reduce, only applies function from right-to-left</li>
+	<pre>
+// we'll sum up only last char in number
+newInt8Array = new Int8Array(4);
+newInt8Array[0] = 51;
+newInt8Array[1] = 51;
+newInt8Array[2] = 62;
+newInt8Array[3] = 72;
+reducedValue = newInt8Array.reduceRight(function(previousValue, currentValue, index) {
+	<span class="message-class-typedarray-29">AppLogger.info('index: ' + index);</span>
+	<span class="message-class-typedarray-29">AppLogger.info('previousValue: ' + previousValue);</span>
+	<span class="message-class-typedarray-29">AppLogger.info('currentValue: ' + currentValue);</span>
+	<span class="message-class-typedarray-29">return (previousValue % 10) + (currentValue % 10);</span>
+});
+<span class="message-class-typedarray-30">AppLogger.info('reducedValue: ' + reducedValue);</span>
+	</pre>
+
+	<li><b>.reverse()</b></li>
+	<li>Reverses typed array in place</li>
+	<pre>
+// newInt8Array = [51, 51, 62, 72]
+newInt8Array.reverse();
+<span class="message-class-typedarray-31">AppLogger.info(newInt8Array.join(','));</span>
+	</pre>
+
+	<li><b>.set(array[,offset])</b></li>
+	<li>Stores values in array based on array (or typed array given)</li>
+	<li>Offset determines where to start storing (length of given array + offset must be under length of created array)</li>
+	<pre>
+var setArrayExample = new Int8Array(4);
+setArrayExample.set([1,2,3], 1);
+<span class="message-class-typedarray-32">AppLogger.info(setArrayExample.join(','));</span>
+	</pre>
+
+	<li><b>.slice(begin[,end])</b></li>
+	<li>Extracts element from typed array and creates a new one</li>
+	<pre>
+// setArrayExample = [0,1,2,3]
+var slicedArray = setArrayExample.slice(1,3);
+<span class="message-class-typedarray-33">AppLogger.info(slicedArray.join(','));</span>
+	</pre>
+
+	<li><b>.some(callback(currentElement, index, array)[,thisArg])</b></li>
+	<li>Returns true if one of the elements in callback returns true</li>
+	<pre>
+// setArrayExample = [0,1,2,3]
+var isThereATwo = function(currentElement) {
+	if (currentElement === 2) {
+		return true;
+	} else {
+		return false;
+	}
+};
+<span class="message-class-typedarray-34">AppLogger.info(setArrayExample.some(isThereATwo));</span>
+	</pre>
+
+	<li><b>.sort([sortingFunction(a,b)]) - NOT SUPPORTED CURRENTLY</b></li>
+	<li>Sorts array in place.</li>
+	<li>It can have sortingFunction which receives two elements and implements sorting algorithm</li>
+	<li>
+		In following example does simple ascending sorting and later descending sorting
+		<pre>
+// newInt8Array = [72, 62, 51, 51];
+var ascSort = function(a, b) {
+	if (a > b) {
+		return 1;
+	} else if (a === b) {
+		return 0;
+	} else {
+		return -1;
+	}
+};
+var descSort = function(a, b) {
+	if (a > b) {
+		return -1;
+	} else if (a === b) {
+		return 0;
+	} else {
+		return 1;
+	}
+};
+newInt8Array.sort(ascSort);
+// newInt8Array = [51, 51, 62, 72];
+<span class="message-class-typedarray-35">AppLogger.info(newInt8Array.join(','));</span>
+newInt8Array.sort(descSort);
+// newInt8Array = [72, 62, 51, 51];
+<span class="message-class-typedarray-36">AppLogger.info(newInt8Array.join(','));</span>
+		</pre>
+	</li>
+
+	<li><b>.subarray([begin[,end]])</b></li>
+	<li>Returns new array based on the same ArrayBuffer. Similar to splice, but it doesn't change array in place</li>
+	<li>end index not included</li>
+	<pre>
+// newInt8Array = [72, 62, 51, 51];	
+var subarray = newInt8Array.subarray(1,3);
+<span class="message-class-typedarray-37">AppLogger.info(subarray.join(','));</span>
+	</pre>
+
+	<li><b>.values()</b></li>
+	<li>Returns iterator which holds values of type array</li>
+	<pre>
+// newInt8Array = [72, 62, 51, 51];
+var values = newInt8Array.values();
+for (val of values) {
+	<span class="message-class-typedarray-38">AppLogger.info(val);</span>
+}
+	</pre>
+
+	<li><b>.toLocaleString()</b></li>
+	<li>Returns local string representation of elements inside of the array</li>
+	<pre>
+// newInt8Array = [72, 62, 51, 51];
+<span class="message-class-typedarray-39">AppLogger.info(newInt8Array.toLocaleString());</span>
+	</pre>
+
+	<li><b>.toString()</b></li>
+	<li>Returns string representation of elements inside of the array</li>
+	<pre>
+// newInt8Array = [72, 62, 51, 51];
+<span class="message-class-typedarray-40">AppLogger.info(newInt8Array.toString());</span>
 	</pre>
 </ul>

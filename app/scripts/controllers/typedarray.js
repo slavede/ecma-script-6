@@ -97,4 +97,131 @@ angular.module('EcmaScript6').controller('typedarray', ['$scope', 'AppLogger', '
 	});
 	AppLogger.info(int8Array.join(','), 'typedarray-22');
 
+	// indexOf
+	// int8Array = [1,0,0,127,126,0,1,1]
+	AppLogger.info(int8Array.indexOf(1, 1), 'typedarray-23');
+
+	// join
+	// entire page of examples :)
+
+	// keys
+	// int8Array = [1,0,0,127,126,0,1,1]
+	var keys = int8Array.keys();
+	for (key of keys) {
+		AppLogger.info(key, 'typedarray-24');
+	}
+
+	// lastIndexOf
+	// int8Array = [1,0,0,127,126,0,1,1]
+	AppLogger.info(int8Array.lastIndexOf(1, 3), 'typedarray-25');
+
+	// map
+	// int8Array = [1,0,0,127,126,0,1,1]
+	var int8ArrayMinus5 = int8Array.map(function(currentElement) {
+		return currentElement - 5;
+	});
+	AppLogger.info(int8ArrayMinus5.join(','), 'typedarray-26');
+
+	// reduce
+	// we'll sum up only last char in number
+	var newInt8Array = new Int8Array(4);
+	newInt8Array[0] = 51;
+	newInt8Array[1] = 51;
+	newInt8Array[2] = 62;
+	newInt8Array[3] = 72;
+	var reducedValue = newInt8Array.reduce(function(previousValue, currentValue, index) {
+		AppLogger.info('index: ' + index, 'typedarray-27');
+		AppLogger.info('previousValue: ' + previousValue, 'typedarray-27');
+		AppLogger.info('currentValue: ' + currentValue, 'typedarray-27');
+		return (previousValue % 10) + (currentValue % 10);
+	});
+	AppLogger.info('reducedValue: ' + reducedValue, 'typedarray-28');
+
+	// reduceRight
+	// we'll sum up only last char in number
+	newInt8Array = new Int8Array(4);
+	newInt8Array[0] = 51;
+	newInt8Array[1] = 51;
+	newInt8Array[2] = 62;
+	newInt8Array[3] = 72;
+	reducedValue = newInt8Array.reduceRight(function(previousValue, currentValue, index) {
+		AppLogger.info('index: ' + index, 'typedarray-29');
+		AppLogger.info('previousValue: ' + previousValue, 'typedarray-29');
+		AppLogger.info('currentValue: ' + currentValue, 'typedarray-29');
+		return (previousValue % 10) + (currentValue % 10);
+	});
+	AppLogger.info('reducedValue: ' + reducedValue, 'typedarray-30');
+
+	// reverse
+	// newInt8Array = [51, 51, 62, 72]
+	newInt8Array.reverse();
+	AppLogger.info(newInt8Array.join(','), 'typedarray-31');
+
+	// set
+	var setArrayExample = new Int8Array(4);
+	setArrayExample.set([1,2,3], 1);
+	AppLogger.info(setArrayExample.join(','), 'typedarray-32');
+
+	// slice
+	// setArrayExample = [0,1,2,3]
+	var slicedArray = setArrayExample.slice(1,3);
+	AppLogger.info(slicedArray.join(','), 'typedarray-33');
+
+	// some
+	// setArrayExample = [0,1,2,3]
+	var isThereATwo = function(currentElement) {
+		if (currentElement === 2) {
+			return true;
+		} else {
+			return false;
+		}
+	};
+	AppLogger.info(setArrayExample.some(isThereATwo), 'typedarray-34');
+
+	// sort
+	// newInt8Array = [72, 62, 51, 51];
+	// var ascSort = function(a, b) {
+	// 	if (a > b) {
+	// 		return 1;
+	// 	} else if (a === b) {
+	// 		return 0;
+	// 	} else {
+	// 		return -1;
+	// 	}
+	// };
+	// var descSort = function(a, b) {
+	// 	if (a > b) {
+	// 		return -1;
+	// 	} else if (a === b) {
+	// 		return 0;
+	// 	} else {
+	// 		return 1;
+	// 	}
+	// };
+	// newInt8Array.sort(ascSort);
+	// AppLogger.info(newInt8Array.join(','), 'typedarray-35');
+	// newInt8Array.sort(descSort);
+	// AppLogger.info(newInt8Array.join(','), 'typedarray-36');
+
+	// subarray
+	// newInt8Array = [72, 62, 51, 51];
+	var subarray = newInt8Array.subarray(1,3);
+	AppLogger.info(subarray.join(','), 'typedarray-37');
+
+	// values
+	// newInt8Array = [72, 62, 51, 51];
+	var values = newInt8Array.values();
+	for (val of values) {
+		AppLogger.info(val, 'typedarray-38');
+	}
+
+	// toLocaleString
+	// newInt8Array = [72, 62, 51, 51];
+	AppLogger.info(newInt8Array.toLocaleString(), 'typedarray-39');
+
+	// toString
+	// newInt8Array = [72, 62, 51, 51];
+	AppLogger.info(newInt8Array.toString(), 'typedarray-40');
+
+
 }]);
