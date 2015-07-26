@@ -255,7 +255,7 @@ angular
 			{
 				sref : 'ecma6.typedarray',
 				display : 'Typed Array',
-				note : '(only in Firefox)'
+				note : '(only in Firefox 39)'
 			},
 			{
 				sref : 'ecma6.proxy',
